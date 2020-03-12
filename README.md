@@ -8,11 +8,11 @@ With a final number of 28,616 infected people, including 11,310 deaths (case-fat
 
 
 
-### Acknowledgements
+#### Acknowledgements
 
 https://www.who.int/csr/don/archive/disease/ebola/en/
 
-### Collection methodology
+#### Collection methodology
 
 https://github.com/imdevskp/ebola_outbreak_dataset
 
