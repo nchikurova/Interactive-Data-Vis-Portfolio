@@ -17,6 +17,10 @@ I am planning to find more datasets that will describe how the governments and p
 ## 2. Sketches and Mockups
 Brainstorming + Sketches
 
+The first scetch that comes to my mind is scatter plot with timeline (date) and confirmed/possible cases as y-axis with transition of growing numbers through the time.
+
+Also I want to make a map which shows the countries that got affected during the virus. Is it possible to make a map without longitute and lattitude? Can I find one or two pair of coordinates and use them for showing the whole conutry?
+
 ## 3. Architectural Schema
 Structural Architecture
 
