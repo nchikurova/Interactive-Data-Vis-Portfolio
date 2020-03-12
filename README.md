@@ -10,9 +10,9 @@ How fast was EVD distribution among the countries provided in dataset? What is t
 Even though Coronavirus and Ebola are not the same epidemic cases, I think some of the answers of those questions will help people now days to understand what to expect and how to react towards such cases, as well as understanding and realization of how strong and smart we are together to live through this. 
 I am planning to find more datasets that will describe how the governments and poeple themselves were fighting with the virus, and what was the most helpful.
 
-[#### Acknowledgements](https://www.who.int/csr/don/archive/disease/ebola/en/)
+[Acknowledgements](https://www.who.int/csr/don/archive/disease/ebola/en/)
 
-[#### Collection methodology](https://github.com/imdevskp/ebola_outbreak_dataset)
+[Collection methodology](https://github.com/imdevskp/ebola_outbreak_dataset)
 
 ## 2. Sketches and Mockups
 Brainstorming + Sketches
