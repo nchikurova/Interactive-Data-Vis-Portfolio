@@ -1,1 +1,26 @@
-
+body {
+    /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 1em 3em;
+    background: white;
+  }
+  h1 {
+    font-family: Bold;
+    color: black;
+  }
+  .country {
+    stroke-width: 0.5px;
+    stroke:black;
+    fill: grey;
+  }
+  div.tooltip {	
+    position: absolute;			
+    text-align: left;			
+    width: 175px;					
+    height: 225px;
+    padding: 15px;			
+    font: 12px;		
+    background: #080F0F;
+    color: white;	
+    pointer-events: none;			
+}
