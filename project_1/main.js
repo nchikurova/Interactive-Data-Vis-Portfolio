@@ -54,6 +54,19 @@ function init() {
     const path = d3.geoPath().projection(projection);
     //const colorScale = d3.geoAlbersUsa().range(["paleturquoise", "darkblue"]);
     // create an svg element in our main `d3-container` element
+
+    const selectElement = d3.select("#dropdown").on("change", function () {
+        console.log("new country is", this.value);
+
+        state.selectedCountry = this.value;
+        draw();
+    });
+    selectElement
+        .selectAll("option")
+        .data(["Guinea", "Nigeria", "Sierra Leone", "Liberia", "Senegal", "Spain", "United States of America", "Mali", "Italy", "United Kingdom"])
+        .join("option")
+        .attr("value", d => d)
+        .text(d => d);
     svg = d3
         .select("#d3-container")
         .append("svg")

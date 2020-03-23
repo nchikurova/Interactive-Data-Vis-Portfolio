@@ -34,15 +34,25 @@ d3.csv("../../data/ebola_2014_2016_clean.csv",
             .paddingInner(paddingInner)
             .paddingOuter(paddingOuter);
 
-
-        // reference for d3.axis: https://github.com/d3/d3-axis
+        // const selectElement = d3.select('#dropdown').on("change", function () {
+        //     console.log("new selected country is", this.value);
+        //     // `this` === the selectElement
+        //     // this.value holds the dropdown value a user just selected
+        //     state.selectedParty = this.value;
+        //     // reference for d3.axis: https://github.com/d3/d3-axis
         const yAxis = d3
             .axisLeft(yScale)
-            .ticks(data.length);
+        //.ticks(data.length);
 
         const xAxis = d3
             .axisBottom(xScale)
         //.ticks(data.length);
+        // selectElement
+        //     .selectAll("option")
+        //     .data(["Guinea", "Nigeria", "Sierra Leone", "Liberia", "Senegal", "Spain", "United States of America", "Mali", "Italy", "United Kingdom"])
+        //     .join("option")
+        //     .attr("value", d => d)
+        //     .text(d => d);
 
         /** MAIN CODE */
         const svg = d3
@@ -92,5 +102,5 @@ d3.csv("../../data/ebola_2014_2016_clean.csv",
             .attr("class", "axis") // .attr("class, "axis") - x axis shows up on the top
             .attr("transform", `translate( ${margin.left}, 0)`)
             //.style("text-anchor", "left")
-            .call(xAxis);
+            .call(xAxis)
     });
