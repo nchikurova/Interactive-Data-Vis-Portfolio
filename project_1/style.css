@@ -11,16 +11,16 @@ body {
   .country {
     stroke-width: 0.5px;
     stroke:black;
-    fill: grey;
+    fill: hsl(0, 6%, 85%);
   }
   div.tooltip {	
     position: absolute;			
     text-align: left;			
-    width: 175px;					
-    height: 225px;
+    width: 100px;					
+    height: 100px;
     padding: 15px;			
     font: 12px;		
-    background: #080F0F;
-    color: white;	
+    background: rgb(83, 170, 170);
+    color: black;	
     pointer-events: none;			
 }

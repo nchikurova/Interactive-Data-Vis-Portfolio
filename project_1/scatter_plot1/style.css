@@ -10,26 +10,35 @@ body {
   }
   
   .dot:hover {
-    fill: darkblue;
+    fill:  #8d2f03;
   }
   
   .axis-label {
     font-size: 16px;
     fill: black;
     text-anchor: middle;
+    font-weight: bold;
+  }
+  .trend {
+    fill: none;
+    stroke: #8d2f03;
+    stroke-width:2;
+    stroke-linejoin: round;
   }
   .tooltip {
     position: absolute;			
     text-align: center;			
     width: 100px;					
-    height: 20px;					
+    height: 90px;					
     padding: 2px;				
-    font: 12px sans-serif;		
+    font: 16px sans-serif;		
     background: white;	
     color: black;
     border: 0px;				
     pointer-events: none;
     stroke: black;
+    opacity:0.8;
+    font-weight: bold;
  }
 
  
