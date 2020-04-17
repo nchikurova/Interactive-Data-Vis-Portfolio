@@ -1,3 +1,6 @@
+
+// This chart is not included in final dashboard
+
 d3.csv("../../data/totals_year.csv").then(d => chart(d))
 
 function chart(csv) {

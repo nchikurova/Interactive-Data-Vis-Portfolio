@@ -180,7 +180,7 @@ function draw_scatter() {
                         div.transition()
                             .duration(200)
                             .style("opacity", 1)
-                        div.html("The number of total deaths on " + " " + " in " + d[0])//formatTime(new Date(d[1])) + " in " + d[0] + " " + "was " + d[1])
+                        div.html("The number of total deaths " + " " + " in " + d[0])//formatTime(new Date(d[1])) + " in " + d[0] + " " + "was " + d[1])
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
                     })
@@ -218,8 +218,8 @@ function draw_scatter() {
                     .on("mouseover", function (d) {
                         div.transition()
                             .duration(200)
-                            .style("opacity", 1)
-                        div.html(console.log("search", d[0][1].Date) + "The number of total cases on " + " " + formatTime(new Date(d[1][1].Date)) + " in " + d[0] + " " + "was " + d[1][3].Total_cases)
+                            .style("opacity", 1) //console.log("search", d[0][1].Date)
+                        div.html("The number of total deaths " + " " + " in " + d[0])
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
 
