@@ -35,7 +35,7 @@ let state = {
  * Using a Promise.all([]), we can load more than one dataset at a time
  * */
 
-d3.csv("../../data/ebola_3_1.csv", d3.autoType).
+d3.csv("../../data/ebola_3.csv", d3.autoType).
     then(raw_data => {
         console.log("raw_data", raw_data)
         state.country2 = raw_data;
@@ -74,7 +74,7 @@ function init_rings() {
         .text(d => d);
 
     svg = d3
-        .select("#d3-container4")
+        .select("#d3-container")
         .append("svg")
         .attr("width", widthrings)
         .attr("height", heightrings);
@@ -100,6 +100,7 @@ function draw_rings() {
     // if there is a selectedType, filter the data before mapping it to our elements
     if (state.selectedCountry2 !== "All") {
         filteredData2 = state.country2.filter(d => d.Country === state.selectedCountry2);
+
         console.log(filteredData2)
     }
 
@@ -171,7 +172,7 @@ function draw_rings() {
             .attr("stroke", d => colorScale_rings(d.Total_cases))
             .attr("r", d => radiusScale_rings(d.Total_cases))
     );
-
+    console.log(dot)
     let dot1 = svg
         .selectAll(".circle")
         .data(filteredData2, d => d.Country)

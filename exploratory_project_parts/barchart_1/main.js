@@ -1,5 +1,5 @@
 // load data
-d3.csv("../../data/totals2015.csv", d3.autoType).then(data => {
+d3.csv("../../data/totals.csv", d3.autoType).then(data => {
     console.log(data);
     // CONSTANTS
     // const width = window.innerWidth * 0.9,
@@ -7,7 +7,7 @@ d3.csv("../../data/totals2015.csv", d3.autoType).then(data => {
     const barPadding = 0.3,
         margin = { top: 20, bottom: 20, left: 40, right: 40 };
     width = 500 - margin.left - margin.right;
-    height = 260 - margin.top - margin.bottom;
+    height = 280 - margin.top - margin.bottom;
     axisTicks = { outerSize: 0 };
 
     const div = d3.select("body").append("div").attr("class", "tooltip");

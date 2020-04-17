@@ -1,4 +1,4 @@
-d3.csv("../../data/totals.csv").then(d => chart(d))
+d3.csv("../../data/totals_year.csv").then(d => chart(d))
 
 function chart(csv) {
 
