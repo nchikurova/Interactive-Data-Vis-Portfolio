@@ -3,26 +3,21 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Interactive Data Visualization Tutorial</title>
+    <title>scatter_plot</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <header>
 
-    <h2>Ebola total death cases</h2>
+    <h2>Total cases and total deaths over time</h2>
 </header>
 
 <body>
     <label for="dropdown">Choose country</label>
     <select id="dropdown" name="dropdown"></select>
-    <!-- <br>
-    <label for="dropdown">Choose case type here </label>
-    <select id="dropdown" name="dropdown"></select>
-    <br>
-    <label for="dropdown2">Choose death cases here</label>
-    <select id="dropdown2" name="dropdown2"></select> -->
-    <div class="tooltip" style="opacity: 0"></div>
-    <div id="d3-container"> </div>
 
+    <div class="tooltip" style="opacity: 0"></div>
+    <div id="d3-container2"> </div>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script> 
     <script src="../../lib/d3.js"></script>
     <script src="main.js"></script>
 </body>

@@ -1,0 +1,29 @@
+body {
+    /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 1em 3em;
+    background-color: #D3D0D0;
+  }
+  h1 {
+    font-family: Bold;
+    color: black;
+  }
+  .dot {
+    cursor: pointer;
+  }
+  
+  .dot:hover {
+    fill: darkblue;
+  }
+  .tooltip {	
+    position: absolute;			
+    text-align: left;			
+    width: 100px;					
+    height: 100px;
+    padding: 15px;			
+    font: 12px;		
+    background: rgb(83, 170, 170);
+    color: black;	
+    pointer-events: none;	
+   	
+}

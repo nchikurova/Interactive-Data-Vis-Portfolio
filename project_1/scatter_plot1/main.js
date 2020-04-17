@@ -1,10 +1,12 @@
 //constant and globals
-const width = window.innerWidth * 0.7,
-    height = window.innerHeight * 0.7,
-    margin = { top: 20, bottom: 50, left: 60, right: 40 },
-    radius = 5,
+// const width = window.innerWidth * 0.7,
+//     height = window.innerHeight * 0.7,
+const margin = { top: 20, bottom: 50, left: 60, right: 40 },
+    width = 600 - margin.left - margin.right,
+    height = 360 - margin.top - margin.bottom,
+    radius = 3,
     default_selection = "All";
-
+axisTicks = { qty: 9 };
 //let
 let svg;
 let xScale;
@@ -17,23 +19,20 @@ let state = {
 };
 const formatTime = d3.timeFormat("%b %d, %Y")
 //load data
-d3.csv("../../data/ebola_3countries.csv",
-    // d => ({
-    //     Date: new Date(d.Date, 0, 1),
-    //     Country: d.Country,
-    // }),
+d3.csv("../../data/ebola_3.csv",
     d3.autoType)
     .then(data => data.map(d => ({
         Date: new Date(d.Date),
         Country: d.Country,
         Total_deaths: d.Total_deaths,
+        Total_cases: d.Total_cases,
     })))
     .then(raw_data => {
         console.log("raw_data", raw_data);
         state.data = raw_data;
         init();
     });
-//const formatDate = d3.time.format("%m/%d/%y").parse
+
 //initializion function
 function init() {
     xScale = d3
@@ -41,14 +40,17 @@ function init() {
         .domain(d3.extent(state.data, d => d.Date))
         .range([margin.left, width - margin.right])
         ;
-    console.log(xScale.domain())
+    //console.log(xScale.domain())
     yScale = d3
         .scaleLinear()
-        .domain([0, d3.max(state.data, d => d.Total_deaths)])
+        .domain([0, d3.max(state.data, d => d.Total_cases)])
         .range([height - margin.bottom, margin.top]);
-
+    y1Scale = d3
+        .scaleLinear()
+        .domain([0, d3.max(state.data, d => d.Total_cases)])
+        .range([height - margin.bottom, margin.top]);
     // axes
-    const xAxis = d3.axisBottom(xScale);
+    const xAxis = d3.axisBottom(xScale).ticks(axisTicks.qty);
     const yAxis = d3.axisLeft(yScale);
 
     const selectElement_country = d3.select("#dropdown").on("change", function () {
@@ -74,7 +76,7 @@ function init() {
     //create svg element
 
     svg = d3
-        .select("#d3-container")
+        .select("#d3-container2")
         .append("svg")
         .attr("width", width)
         .attr("height", height)
@@ -90,10 +92,9 @@ function init() {
         .attr("class", "axis-label")
         .selectAll("text")
         .attr("x", "50%")
-        .attr("dy", "3em")
+        .attr("dy", "3em");
 
-        .attr("transform", "rotate(-35)");
-
+    //.attr("transform", "rotate(-35)")
     //.text("Year");
 
     svg
@@ -107,6 +108,7 @@ function init() {
         .attr("dx", "-3em")
         .attr("writing-mode", "vertical-rl")
         .text("Number of cases")
+
     div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0)
@@ -119,15 +121,14 @@ function draw() {
     if (state.selection !== "All") {
         filteredData = state.data.filter(d => d.Country === state.selection);
     }
+    //console.log(state.selection)
     console.log(filteredData)
-    //colorScale = d3.scaleLinear().domain([0, d3.max(state.data, d => d.Country)]).range(["pink", "darkred"])
 
     const lineFunc = d3
         .line()
         .x(d => xScale(d.Date))
         .y(d => yScale(d.Total_deaths))
-    //.y0(yScale(0));
-    //console.log(filteredData);
+
     const dot = svg
         .selectAll(".dot")
         .data(filteredData, d => d.Total_deaths)
@@ -136,13 +137,8 @@ function draw() {
                 enter
                     .append("circle")
                     .attr("class", "dot")
-                    //.attr("fill", " #8d2f03")
-                    .attr("stroke", d => {
-                        if (d.Country === "Liberia") return "#8d2f03";
-                        else if (d.Country === "Guinea") return "coral";
-                        else return "brown";
-                    })
-                    .attr("fill", "none")
+                    .attr("fill", " brown")
+
                     .attr("r", radius)
                     .attr("cy", d => yScale(d.Total_deaths))
                     .attr("cx", d => xScale(d.Date))
@@ -161,7 +157,16 @@ function draw() {
                             .style("opacity", 0)
                     }),
             update => update,
-            exit => exit.remove()
+            exit => exit.call(exit =>
+                // exit selections -- all the `.dot` element that no longer match to HTML elements
+                exit
+                    .transition()
+                    // .delay(d => d.Date)
+                    .delay(1000)
+                    .duration(500)
+                    .attr("cy", height - margin.bottom)
+                    .remove()
+            ).remove()
         )
         .call(
             selection =>
@@ -173,7 +178,7 @@ function draw() {
 
     const line = svg
         .selectAll("path.trend")
-        .data([filteredData])
+        .data(d3.groups(filteredData, d => d.Country))
         .join(
             enter =>
                 enter
@@ -183,20 +188,96 @@ function draw() {
             update => update,
             exit => exit.remove()
         )
-        .call(selection =>
-            selection
+        .call(selection_dots =>
+            selection_dots
                 .transition()
                 .duration(1000)
-                .delay(1000)
-                .remove()
+                // .delay(1000)
+                // .remove()
+                .attr("opacity", 0.8)
+                .attr("fill", "brown")
+                .attr("d", d => lineFunc(d[1])) // 1 is position of d after passing d3.groups
+        );
 
+    const lineFunc1 = d3
+        .line()
+        .x(d => xScale(d.Date))
+        .y(d => y1Scale(d.Total_cases))
+
+    //.y(d => yScale(d.Total_cases))
+    //.y0(yScale(0));
+    //console.log(filteredData);
+    const dot1 = svg
+        .selectAll(".dot")
+        .data(filteredData, d => d.Total_cases)
+        .join(
+            enter =>
+                enter
+                    .append("circle")
+                    .attr("class", "dot")
+                    .attr("fill", " black")
+
+                    .attr("r", radius)
+                    .attr("cy", d => y1Scale(d.Total_cases))
+                    .attr("cx", d => xScale(d.Date))
+                    .on("mouseover", function (d) {
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", 1)
+                        div.html("Total cases on " + " " + formatTime(new Date(d.Date)) + " in " + d.Country + " " + "was " + d.Total_cases)
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY - 28) + "px")
+
+                    })
+                    .on("mouseout", function (d) {
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", 0)
+                    }),
+            update => update,
+            exit => exit.call(exit =>
+                // exit selections -- all the `.dot` element that no longer match to HTML elements
+                exit
+                    .transition()
+                    .delay(d => d.Date)
+                    .duration(500)
+                    .attr("cy", height - margin.bottom)
+                    .remove()
+            ).remove()
+        )
+        .call(
+            selection =>
+                selection
+                    .transition() // initialize transition
+                    .duration(1000) // duration 1000ms / 1s
+                    .attr("cx", d => xScale(d.Date)) // started from the bottom, now we're here
+        );
+
+    const line1 = svg
+        .selectAll("path.trend")
+        .data(d3.groups(filteredData, d => d.Country))
+        .join(
+            enter =>
+                enter
+                    .append("path")
+                    .attr("class", "trend")
+                    .attr("opacity", 1)
+                    .attr("fill", "black")
+                    .attr("stroke", 3),
+            update => update,
+            exit => exit.remove()
+        )
+        .call(selection_dots =>
+            selection_dots
+                .transition()
+                .duration(1000)
+                // .delay(1000)
+                // .remove()
+                .attr("opacity", 0.8)
+                .attr("fill", "black")
+                .attr("stroke", 3)
+                .attr("d", d => lineFunc1(d[1]))
         );
 
 }
-
-
-
-
-
-
 

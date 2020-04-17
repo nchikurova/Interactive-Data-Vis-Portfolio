@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- this is the title that goes in the browser tab name  -->
+    <title>Ebola project</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>The Western African Ebola virus epidemic </h1>
+    </header>
+
+    <label for="dropdown">Choose country </label>
+    <select id="dropdown" name="dropdown"></select>
+
+    <div id="tooltip-container"></div>
+
+    <div id="d3-container"> </div>
+
+    <div id="d3-container1"></div>
+    <div>
+    </div>
+
+    <div class="line1">Guinea</div>
+    <div class="line2">Liberia</div>
+    <div class="line3">Sierra Leone</div>
+    <div class="line4"></div>
+    <div class="line5"></div>
+
+    <div id="d3-container3"></div>
+    <div id="d3-container4"></div>
+    </div>
+
+    <div id="text"> With a final number of 28,616 infected people, including 11,310 deaths (case-fatality rate of 40%),
+        The Western African Ebola virus epidemic was the most widespread outbreak of Ebola virus disease
+        (EVD) in history—causing major loss of life
+        and
+        socioeconomic disruption in the region, mainly in Guinea, Liberia, and Sierra Leone in 2013 – 2016.
+
+    </div>
+
+    <div id="text1">Total numbers</div>
+
+    <div id="text2">Number of total cases and deaths over time</div>
+
+    <div id="text3"><strong>Other affected by Ebola countries:
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>Nigeria &thinsp;20 &ensp; 8
+            <br>Mali &emsp; &ensp;8 &emsp;6
+            <br>USA &emsp; &ensp;4 &emsp;&thinsp;1
+            <br>Italy &emsp; &ensp;1 &emsp;&thinsp;-
+            <br>Senegal &thinsp;1 &emsp;&thinsp;-
+            <br>Spain &thinsp;&emsp;1 &emsp;&thinsp;-
+            <br>UK &emsp; &emsp;&thinsp;1 &emsp;&thinsp;-</strong>
+    </div>
+    <div class="legend1"></div>
+    <div class="legend2"></div>
+    <div class="legendtext">Total cases<br>&emsp;&emsp;Total deaths</div>
+    <a class="datasource" href=https://www.kaggle.com/imdevskp/ebola-outbreak-20142016-complete-dataset>
+        Data Source: Ebola 2014-2016
+        Outbreak Complete Dataset </a>
+    <!-- this is the line that loads in d3 -->
+    <script src="https://d3js.org/d3-array.v2.min.js"></script> 
+    <script src="../lib/d3.js"></script>
+    <!-- this is the line that loads in the main js script -->
+    <script src="barchart.js"></script>
+    <script src="main1.js"></script>
+    <script src="map.js"></script>
+
+</body>
+
+</html>

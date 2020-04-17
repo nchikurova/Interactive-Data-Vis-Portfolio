@@ -2,14 +2,14 @@ body {
     /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
     font-family: "Source Sans Pro", sans-serif;
     padding: 1em 3em;
-    background: white;
+    background-color: #D3D0D0;
   }
   h1 {
     font-family: Bold;
     color: black;
   }
   .country {
-    stroke-width: 0.5px;
+    stroke-width:  1px;
     stroke:black;
     fill: hsl(0, 6%, 85%);
   }

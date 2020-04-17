@@ -2,11 +2,13 @@
 d3.csv("../../data/totals2015.csv", d3.autoType).then(data => {
     console.log(data);
     // CONSTANTS
-    const width = window.innerWidth * 0.9,
-        height = window.innerHeight / 3,
-        barPadding = 0.3,
+    // const width = window.innerWidth * 0.9,
+    //     height = window.innerHeight / 3,
+    const barPadding = 0.3,
         margin = { top: 20, bottom: 20, left: 40, right: 40 };
-    axisTicks = { qty: 10, outerSize: 0 };
+    width = 500 - margin.left - margin.right;
+    height = 260 - margin.top - margin.bottom;
+    axisTicks = { outerSize: 0 };
 
     const div = d3.select("body").append("div").attr("class", "tooltip");
     // SCALES
@@ -23,7 +25,6 @@ d3.csv("../../data/totals2015.csv", d3.autoType).then(data => {
         .range([height - margin.bottom, margin.top]);
     // AXES
     const xAxis = d3.axisBottom(x0Scale)
-        .ticks(axisTicks.qty)
 
     const yAxis = d3.axisLeft(yScale)
         .tickFormat(d3.format(".2s"));
@@ -67,7 +68,7 @@ d3.csv("../../data/totals2015.csv", d3.autoType).then(data => {
         .enter()
         .append("rect")
         .attr("class", "rect Total_cases")
-        .attr("fill", "grey")
+        .attr("fill", "#525050")
         .attr("width", x1Scale.bandwidth())
         .attr("x", d => x1Scale('Total_cases'))
         .attr("y", d => yScale(d.Total_cases))
@@ -106,4 +107,5 @@ d3.csv("../../data/totals2015.csv", d3.autoType).then(data => {
             div.style('opacity', 0);
         });
 });
+
 

@@ -1,0 +1,202 @@
+
+#text {    
+	position:absolute;
+	top:90px;
+	left:520px;
+	width:900px;
+  height: 300px; 
+  font-size: 18px; 
+}
+#text1 {
+  position: absolute;
+  top: 420px;
+  left: 30px;
+  height: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#text2 {
+    position: absolute;
+    top: 140px;
+    left: 30px;
+    height: 12px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#text3 {
+  position: absolute;
+  top: 350px;
+  left: 1030px;
+  width: 300px;
+  height: 300px;
+  font-size: 18px;
+}
+.legend1 {
+  position: absolute;
+  top: 415px;
+  left: 1095px;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  background: #525050;
+  border: 1px solid black;
+}
+.legend2 {
+  position: absolute;
+  top: 438px;
+  left: 1128px;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  background:brown;
+  border: 1px solid black;
+}
+.legendtext{
+  position: absolute;
+  top: 420px;
+  left: 1130px;
+  /* width: 60; */
+}
+
+/* barchart */
+#d3-container {    
+	position:absolute;
+	top:440px;
+	left:10px;
+	/* width:600px; */
+	height: 250px; 
+}
+/* lines */
+.line1 { 
+  top:230px;
+	left:710px;   
+  width: 180px;
+  height: 30px;
+  border-bottom: 1px solid black;
+  opacity: 0.6;
+  position: absolute;
+    }
+.line2 { 
+  top:335px;
+  left:748px;   
+  width: 172px;
+  height: 30px;
+  border-bottom: 1px solid black;
+  opacity: 0.6;
+  position: absolute;
+    }
+.line3 { 
+  top:560px;
+  left:764px;   
+  width: 140px;
+  height: 30px;
+  border-bottom: 1px solid black;
+  opacity: 0.6;
+  position: absolute;
+    }
+
+.line4 { 
+  top:261px;
+  left:903px;   
+  width: 10px;
+  height: 330px;
+  border-left: 1px solid black;
+  opacity: 0.6;
+  position: absolute;
+     }
+.line5 { 
+  top:286px;
+  left:920px;   
+  width: 10px;
+  height: 80px;
+  border-left: 1px solid black;
+  opacity: 0.6;
+  position: absolute;
+         }
+/* scatter plot */
+#d3-container1 {    
+	position:absolute;
+	top:160px;
+	left:10px;
+	height: 300px;
+}
+/* map */
+#d3-container3 {
+	position:absolute;
+	top:20px;
+	left:840px; 
+	height: 700px;
+}
+/* rings */
+#d3-container4 {
+	position:absolute;
+	top:190px;
+	left:460px;
+	height: 550px;
+}
+h1 {
+   font-weight: Bold; 
+    color: black;
+    font-family: 'Roboto Slab', serif;
+  }
+ .trend{
+    fill: none; 
+    stroke: brown;
+    stroke-width: 4;
+  }
+  .trend1{
+    fill: none;
+    stroke:#525050;
+    stroke-width: 4;
+  }
+  .country1 {
+    stroke-width:  1px;
+    stroke: white;
+    fill:  #D3D0D0;
+  }
+  .country {
+    stroke-width:  1px;
+    stroke:black;
+    fill:  #D3D0D0;
+  }
+body {
+    font-family: 'Roboto Slab', serif;
+    padding: 1em 3em;
+    background-color: #D3D0D0;
+  }
+  .axis-label {
+    font-size: 16px;
+    fill: black;
+    text-anchor: middle;
+    font-weight: bold;
+  }  
+  .label {
+    fill: white;
+    text-anchor: end;
+  }
+  .axis {
+    font-size: 14px;
+  }
+  .datasource{
+    position: absolute;
+    top: 720px;
+    left: 980px;
+    color: black;
+  }
+  div.tooltip {	
+    position: absolute;			
+    text-align: left;			
+    width: 150px;					
+    /* height: 120px; */
+    padding: 8px;			
+    font: 12px;		
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: black;	
+    background: white;
+    font-weight: 400;
+    pointer-events: none;			
+}
