@@ -1,5 +1,5 @@
 //load data
-d3.csv("../../data/totals.csv", d3.autoType).then(data => {
+d3.csv("../data/totals.csv", d3.autoType).then(data => {
     console.log(data);
     // CONSTANTS
     // const width = window.innerWidth * 0.9,

@@ -33,7 +33,7 @@ let state = {
 };
 const formatTime = d3.timeFormat("%b %d, %Y")
 //load data
-d3.csv("../../data/ebola_3.csv",
+d3.csv("../data/ebola_3.csv",
     d3.autoType)
     .then(data => data.map(d => ({
         Date: new Date(d.Date),

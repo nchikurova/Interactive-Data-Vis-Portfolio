@@ -1,4 +1,4 @@
-d3.json("../../data/custom.geo.json", d3.autoType).
+d3.json("../data/custom.geo.json", d3.autoType).
     then(geojson => {
 
         var svg;
