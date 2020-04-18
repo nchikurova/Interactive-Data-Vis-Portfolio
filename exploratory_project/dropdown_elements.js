@@ -3,7 +3,7 @@
 var marginScatter = { top: 20, bottom: 60, left: 60, right: 40 },
     widthScatter = 600 - marginScatter.left - marginScatter.right,
     heightScatter = 360 - marginScatter.top - marginScatter.bottom,
-    radius_scatter = 2;
+    radius_scatter = 3;
 const default_selection = null;
 const axisTicks = { qty: 5 };
 
@@ -162,27 +162,34 @@ function draw_scatter() {
 
     console.log("fd", filteredData);
 
-    const lineFunc = d3
-        .line()
-        .x(d => xScale(d.Date))
-        .y(d => yScale(d.Total_deaths))
+    //**************** IF I WANT TO MAKE MY DOTS LINE: ADD LINEFUNC(1) AND CONST LINE(1)
+    // const lineFunc = d3
+    //     .line()
+    //     .x(d => xScale(d.Date))
+    //     .y(d => yScale(d.Total_deaths))
 
-    const line = svgScatter
-        .selectAll("path.trend")
-        .data(d3.groups(filteredData, d => d.Country))
+    const dot = svgScatter
+        .selectAll(".dot")
+        .data(filteredData, d => d.Total_deaths + d.Date)
         .join(
             enter =>
                 enter
-                    .append("path")
-                    .attr("class", "trend")
-                    .attr("opacity", 0)
+                    .append("circle")
+                    .attr("class", "dot")
+                    .attr("fill", " brown")
+                    .attr("r", radius_scatter)
+                    .attr("cy", d => yScale(d.Total_deaths))
+                    .attr("cx", d => xScale(d.Date))
+
                     .on("mouseover", function (d) {
                         div.transition()
                             .duration(200)
                             .style("opacity", 1)
-                        div.html("The number of total deaths " + " " + " in " + d[0])//formatTime(new Date(d[1])) + " in " + d[0] + " " + "was " + d[1])
+                            .attr("r", radius_scatter * 3)
+                        div.html("The number of total deaths on " + " " + "<p style=' font-size:18px; font-weight:bold; '><strong>" + formatTime(new Date(d.Date)) + "</strong></p>" + " in " + d.Country + " " + "was " + "<p style=' font-size:18px; font-weight: bold; '><strong>" + d.Total_deaths + "</strong></p>")
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
+
                     })
                     .on("mouseout", function (d) {
                         div.transition()
@@ -190,36 +197,68 @@ function draw_scatter() {
                             .style("opacity", 0)
                     }),
             update => update,
-            exit => exit.remove()
+            exit => exit.call(exit =>
+                // exit selections -- all the `.dot` element that no longer match to HTML elements
+                exit
+                    .transition()
+                    // .delay(d => d.Date)
+                    .delay(1000)
+                    .duration(500)
+                    .attr("cy", heightScatter - marginScatter.bottom)
+                    .remove()
+            ).remove()
         )
-        .call(selection_dots =>
-            selection_dots
-                .transition()
-                .duration(1000)
-                .attr("opacity", 1)
-                .attr("d", d => lineFunc(d[1]))
+        .call(
+            selection =>
+                selection
+                    .transition() // initialize transition
+                    .duration(1000) // duration 1000ms / 1s
+                    .attr("cx", d => xScale(d.Date)) // started from the bottom, now we're here
         );
+    //**************** IF I WANT TO MAKE MY DOTS LINE: ADD LINEFUNC(1) AND CONST LINE(1)
+    // const line = svgScatter
+    //     .selectAll("path.trend")
+    //     .data(d3.groups(filteredData, d => d.Country))
+    //     .join(
+    //         enter =>
+    //             enter
+    //                 .append("path")
+    //                 .attr("class", "trend")
+    //                 .attr("opacity", 0),
+    //         update => update,
+    //         exit => exit.remove()
+    //     )
+    //     .call(selection_dots =>
+    //         selection_dots
+    //             .transition()
+    //             .duration(1000)
+    //             .attr("opacity", 1)
+    //             .attr("d", d => lineFunc(d[1])) // by grouping filteredData (line 221) we change the structure, so to get d[0] would be country, d[1] - the rest of the data points
+    //     );
 
-    const lineFunc1 = d3
-        .line()
-        .x(d => xScale(d.Date))
-        .y(d => y1Scale(d.Total_cases))
+    // const lineFunc1 = d3
+    //     .line()
+    //     .x(d => xScale(d.Date))
+    //     .y(d => y1Scale(d.Total_cases))
 
-    const countryData = d3.groups(filteredData, d => d.Country)
-    console.log(countryData)
-    const line1 = svgScatter
-        .selectAll("path.trend1")
-        .data(d3.groups(filteredData, d => d.Country))
+
+    const dot1 = svgScatter
+        .selectAll(".dot1")
+        .data(filteredData, d => d.Total_cases)
         .join(
             enter =>
                 enter
-                    .append("path")
-                    .attr("class", "trend1")
+                    .append("circle")
+                    .attr("class", "dot1")
+                    .attr("fill", " #525050")
+                    .attr("r", radius_scatter)
+                    .attr("cy", d => y1Scale(d.Total_cases))
+                    .attr("cx", d => xScale(d.Date))
                     .on("mouseover", function (d) {
                         div.transition()
                             .duration(200)
-                            .style("opacity", 1) //console.log("search", d[0][1].Date)
-                        div.html("The number of total deaths " + " " + " in " + d[0])
+                            .style("opacity", 1)
+                        div.html("The number of total cases on " + " " + "<p style=' font-size:18px; '><strong>" + formatTime(new Date(d.Date)) + "</strong></p>" + " in " + d.Country + " " + "was " + "<p style=' font-size:18px; '><strong>" + d.Total_cases + "</strong></p>")
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
 
@@ -229,17 +268,44 @@ function draw_scatter() {
                             .duration(200)
                             .style("opacity", 0)
                     }),
-
             update => update,
-            exit => exit.remove()
+            exit => exit.call(exit =>
+                // exit selections -- all the `.dot` element that no longer match to HTML elements
+                exit
+                    .transition()
+                    .delay(d => d.Date)
+                    .duration(500)
+                    .attr("cy", heightScatter - marginScatter.bottom)
+                    .remove()
+            ).remove()
         )
-        .call(selection_dot1 =>
-            selection_dot1
-                .transition()
-                .duration(1000)
-                .attr("opacity", 1)
-                .attr("d", d => lineFunc1(d[1]))
+        .call(
+            selection =>
+                selection
+                    .transition() // initialize transition
+                    .duration(1000) // duration 1000ms / 1s
+                    .attr("cx", d => xScale(d.Date)) // started from the bottom, now we're here
         );
+    //**************** IF I WANT TO MAKE MY DOTS LINE: ADD LINEFUNC(1) AND CONST LINE(1)
+    // const line1 = svgScatter
+    //     .selectAll("path.trend1")
+    //     .data(d3.groups(filteredData, d => d.Country))
+    //     .join(
+    //         enter =>
+    //             enter
+    //                 .append("path")
+    //                 .attr("class", "trend1"),
+    //              
+    //         update => update,
+    //         exit => exit.remove()
+    //     )
+    // .call(selection_dot1 =>
+    //     selection_dot1
+    //         .transition()
+    //         .duration(1000)
+    //         .attr("opacity", 1)
+    //         .attr("d", d => lineFunc1(d[1]))
+    // );
 }
 
 function draw_rings() {
@@ -283,7 +349,7 @@ function draw_rings() {
                             .duration(200)
                             .style('opacity', 1);
                         div
-                            .html("The number of total cases on " + " " + formatTime(new Date(d.Date)) + " in " + d.Country + " " + "was " + d.Total_cases)
+                            .html("The number of total cases on " + " " + "<p style=' font-size:18px; '><strong>" + formatTime(new Date(d.Date)) + "</strong></p>" + " in " + d.Country + " " + "was " + "<p style=' font-size:18px; '><strong>" + d.Total_cases + "</strong></p>")
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 28) + "px");
                     })
@@ -340,7 +406,7 @@ function draw_rings() {
                             .duration(200)
                             .style('opacity', 1);
                         div
-                            .html("The number of total deaths on " + " " + formatTime(new Date(d.Date)) + " in " + d.Country + " " + "was " + d.Total_deaths)
+                            .html("The number of total deaths on " + " " + "<p style=' font-size:18px; font-weight:bold; '><strong>" + formatTime(new Date(d.Date)) + "</strong></p>" + " in " + d.Country + " " + "was " + "<p style=' font-size:18px; font-weight: bold; '><strong>" + d.Total_deaths + "</strong></p>")
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 28) + "px");
                     })

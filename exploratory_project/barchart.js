@@ -77,7 +77,7 @@ d3.csv("../data/totals.csv", d3.autoType).then(data => {
         })
         .on('mouseover', function (d) {
             div.style('opacity', 0.9)
-                .html("Total cases: " + d.Total_cases)
+                .html("Total cases by the end of the epidemic: " + "<p style=' '><strong>" + d.Total_cases + "</strong></p>")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -99,7 +99,7 @@ d3.csv("../data/totals.csv", d3.autoType).then(data => {
         })
         .on('mouseover', function (d) {
             div.style('opacity', 0.9)
-                .html("Total deaths: " + d.Total_deaths)
+                .html("Total deaths by the end of the epidemic: " + "<p style=' '><strong>" + d.Total_deaths + "</strong></p>")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })

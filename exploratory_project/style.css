@@ -36,7 +36,7 @@
 .legend1 {
   position: absolute;
   top: 415px;
-  left: 1095px;
+  left: 1100px;
   width: 20px;
   height: 20px;
   margin: 5px;
@@ -46,7 +46,7 @@
 .legend2 {
   position: absolute;
   top: 438px;
-  left: 1128px;
+  left: 1133px;
   width: 20px;
   height: 20px;
   margin: 5px;
@@ -56,8 +56,8 @@
 .legendtext{
   position: absolute;
   top: 420px;
-  left: 1130px;
-  /* width: 60; */
+  left: 1135px;
+   width: 100; 
 }
 
 /* barchart */
@@ -115,6 +115,15 @@
   opacity: 0.6;
   position: absolute;
          }
+.line6{
+  position: absolute;
+  top: 700px;
+  left: 575px;
+  width: 250px;
+  height: 10px;
+  /* border-bottom: 1px solid grey;
+  marker-end: "url(#arrow)"; */
+}
 /* scatter plot */
 #d3-container1 {    
 	position:absolute;
@@ -144,12 +153,12 @@ h1 {
  .trend{
     fill: none; 
     stroke: brown;
-    stroke-width: 4;
+    stroke-width: 3;
   }
   .trend1{
     fill: none;
     stroke:#525050;
-    stroke-width: 4;
+    stroke-width: 3;
   }
   .country1 {
     stroke-width:  1px;
@@ -181,8 +190,8 @@ body {
   }
   .datasource{
     position: absolute;
-    top: 720px;
-    left: 980px;
+    top: 725px;
+    left: 880px;
     color: black;
   }
   div.tooltip {	

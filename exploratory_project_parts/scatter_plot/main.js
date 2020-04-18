@@ -88,14 +88,6 @@ function init() {
         .attr("class", "axis x-axis")
         .attr("transform", `translate(0,${height - margin.bottom})`)
         .call(xAxis)
-        .append("text")
-        .attr("class", "axis-label")
-        .selectAll("text")
-        .attr("x", "50%")
-        .attr("dy", "3em");
-
-    //.attr("transform", "rotate(-35)")
-    //.text("Year");
 
     svg
         .append("g")
@@ -104,10 +96,7 @@ function init() {
         .call(yAxis)
         .append("text")
         .attr("class", "axis-label")
-        .attr("y", "50%")
-        .attr("dx", "-3em")
-        .attr("writing-mode", "vertical-rl")
-        .text("Number of cases")
+
 
     div = d3.select("body").append("div")
         .attr("class", "tooltip")
@@ -123,25 +112,47 @@ function draw() {
     }
     //console.log(state.selection)
     console.log(filteredData)
-
-    const lineFunc = d3
-        .line()
-        .x(d => xScale(d.Date))
-        .y(d => yScale(d.Total_deaths))
+    // bisect = {
+    //     const: bisect = d3.bisector(d => d.Date).left,
+    //     return: mx => {
+    //         const Date = x.invert(mx);
+    //         const index = bisect(state.data, Date, 1);
+    //         const a = state.data[index - 1];
+    //         const b = state.data[index];
+    //         return Date - a.Date > b.Date - Date ? b : a;
+    //     },
+    // }
+    // const lineFunc = d3
+    //     .line()
+    //     .x(d => xScale(d.Date))
+    //     .y(d => yScale(d.Total_deaths))
 
     const dot = svg
         .selectAll(".dot")
-        .data(filteredData, d => d.Total_deaths)
+        .data(filteredData, d => d.Total_deaths, d => d.Country)
+        //.data(filteredData, d => d.Country)
         .join(
             enter =>
                 enter
                     .append("circle")
                     .attr("class", "dot")
-                    .attr("fill", " brown")
+                    .attr("fill", "brown")
+                    // .attr("fill", " none")
+                    // .attr("stroke", "brown")
 
                     .attr("r", radius)
                     .attr("cy", d => yScale(d.Total_deaths))
                     .attr("cx", d => xScale(d.Date))
+
+                    //         svg.on("touchmove mousemove", function (d) {
+                    //             const { Date, Total_deaths } = bisect(d3.mouse(this)[0]);
+                    //             div.attr("transform", `translate(${x(Date)}, $y{(Total_deaths)})`)
+                    //                 .call(callout, `${Total_deaths}, ${Date}`)
+                    //         }));
+                    // svg.on("touchend mouseleave", () =>
+                    //     div.call(callout, null));
+                    // return svg.node(),
+
                     .on("mouseover", function (d) {
                         div.transition()
                             .duration(200)
@@ -176,46 +187,47 @@ function draw() {
                     .attr("cx", d => xScale(d.Date)) // started from the bottom, now we're here
         );
 
-    const line = svg
-        .selectAll("path.trend")
-        .data(d3.groups(filteredData, d => d.Country))
-        .join(
-            enter =>
-                enter
-                    .append("path")
-                    .attr("class", "trend")
-                    .attr("opacity", 0),
-            update => update,
-            exit => exit.remove()
-        )
-        .call(selection_dots =>
-            selection_dots
-                .transition()
-                .duration(1000)
-                // .delay(1000)
-                // .remove()
-                .attr("opacity", 0.8)
-                .attr("fill", "brown")
-                .attr("d", d => lineFunc(d[1])) // 1 is position of d after passing d3.groups
-        );
+    // const line = svg
+    //     .selectAll("path.trend")
+    //     .data(d3.groups(filteredData, d => d.Country))
+    //     .join(
+    //         enter =>
+    //             enter
+    //                 .append("path")
+    //                 .attr("class", "trend")
+    //                 .attr("opacity", 0),
+    //         update => update,
+    //         exit => exit.remove()
+    //     )
+    //     .call(selection_dots =>
+    //         selection_dots
+    //             .transition()
+    //             .duration(1000)
+    //             // .delay(1000)
+    //             // .remove()
+    //             .attr("opacity", 0.8)
+    //             .attr("fill", "brown")
+    //             .attr("d", d => lineFunc(d[1])) // 1 is position of d after passing d3.groups
+    //     );
 
-    const lineFunc1 = d3
-        .line()
-        .x(d => xScale(d.Date))
-        .y(d => y1Scale(d.Total_cases))
+    // const lineFunc1 = d3
+    //     .line()
+    //     .x(d => xScale(d.Date))
+    //     .y(d => y1Scale(d.Total_cases))
 
     //.y(d => yScale(d.Total_cases))
     //.y0(yScale(0));
     //console.log(filteredData);
     const dot1 = svg
-        .selectAll(".dot")
+        .selectAll(".dot1")
         .data(filteredData, d => d.Total_cases)
         .join(
             enter =>
                 enter
                     .append("circle")
-                    .attr("class", "dot")
-                    .attr("fill", " black")
+                    .attr("class", "dot1")
+                    .attr("fill", " none")
+                    .attr("stroke", " black")
 
                     .attr("r", radius)
                     .attr("cy", d => y1Scale(d.Total_cases))
@@ -239,7 +251,8 @@ function draw() {
                 // exit selections -- all the `.dot` element that no longer match to HTML elements
                 exit
                     .transition()
-                    .delay(d => d.Date)
+                    // .delay(d => d.Date)
+                    .delay(1000)
                     .duration(500)
                     .attr("cy", height - margin.bottom)
                     .remove()
@@ -253,31 +266,31 @@ function draw() {
                     .attr("cx", d => xScale(d.Date)) // started from the bottom, now we're here
         );
 
-    const line1 = svg
-        .selectAll("path.trend")
-        .data(d3.groups(filteredData, d => d.Country))
-        .join(
-            enter =>
-                enter
-                    .append("path")
-                    .attr("class", "trend")
-                    .attr("opacity", 1)
-                    .attr("fill", "black")
-                    .attr("stroke", 3),
-            update => update,
-            exit => exit.remove()
-        )
-        .call(selection_dots =>
-            selection_dots
-                .transition()
-                .duration(1000)
-                // .delay(1000)
-                // .remove()
-                .attr("opacity", 0.8)
-                .attr("fill", "black")
-                .attr("stroke", 3)
-                .attr("d", d => lineFunc1(d[1]))
-        );
+    // const line1 = svg
+    //     .selectAll("path.trend")
+    //     .data(d3.groups(filteredData, d => d.Country))
+    //     .join(
+    //         enter =>
+    //             enter
+    //                 .append("path")
+    //                 .attr("class", "trend")
+    //                 .attr("opacity", 1)
+    //                 .attr("fill", "black")
+    //                 .attr("stroke", 3),
+    //         update => update,
+    //         exit => exit.remove()
+    //     )
+    //     .call(selection_dots =>
+    //         selection_dots
+    //             .transition()
+    //             .duration(1000)
+    //             // .delay(1000)
+    //             // .remove()
+    //             .attr("opacity", 0.8)
+    //             .attr("fill", "black")
+    //             .attr("stroke", 3)
+    //             .attr("d", d => lineFunc1(d[1]))
+    //     );
 
 }
 
