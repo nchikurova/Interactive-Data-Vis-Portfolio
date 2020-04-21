@@ -112,6 +112,7 @@ function draw() {
     }
     //console.log(state.selection)
     console.log(filteredData)
+    // ATTEMPT ON USING D3.BISECT(1)
     // bisect = {
     //     const: bisect = d3.bisector(d => d.Date).left,
     //     return: mx => {
@@ -143,7 +144,7 @@ function draw() {
                     .attr("r", radius)
                     .attr("cy", d => yScale(d.Total_deaths))
                     .attr("cx", d => xScale(d.Date))
-
+                    //ATTEMPT ON USING D3.BISECT(2)
                     //         svg.on("touchmove mousemove", function (d) {
                     //             const { Date, Total_deaths } = bisect(d3.mouse(this)[0]);
                     //             div.attr("transform", `translate(${x(Date)}, $y{(Total_deaths)})`)
@@ -228,7 +229,7 @@ function draw() {
                     .attr("class", "dot1")
                     .attr("fill", " none")
                     .attr("stroke", " black")
-
+                    // lines 230 and 231 make circles empty
                     .attr("r", radius)
                     .attr("cy", d => y1Scale(d.Total_cases))
                     .attr("cx", d => xScale(d.Date))
