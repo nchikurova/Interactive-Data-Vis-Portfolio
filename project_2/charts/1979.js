@@ -32,7 +32,7 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(data => {
     const width1 = 400,
         height1 = 250,
 
-        margin1 = { top: 5, bottom: 40, left: 40, right: 0 };
+        margin1 = { top: 30, bottom: 40, left: 60, right: 5 };
 
     axisTicksX = { qty: 20 };
     axisTicksY = { qty: 10 };
@@ -57,9 +57,8 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(data => {
     const xAxis1 = d3.axisBottom(xScale1).ticks(axisTicksX.qty);
 
     const yAxis1 = d3.axisLeft(yScale1)
-        .ticks((slices[0].values).length).ticks(axisTicksY.qty);
+        .ticks((slices[0].values).length).ticks(axisTicksY.qty).tickFormat(d => d + " %");
     console.log(yAxis1)
-    // colorScale = d3.scaleLinear().range(["beighe", "red"]).domain(d3.map(data, d => d.b))
 
     /** MAIN CODE */
     const svg1 = d3
@@ -113,15 +112,21 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(data => {
         .attr("class", "axis y-axis")
         .attr("transform", `translate(${margin1.left},0)`)
         .call(yAxis1)
+        .append("text")
+        .attr("class", "axis-label")
+        .attr("y", "50%")
+        .attr("dx", "-4.5em")
+        .attr("writing-mode", "vertical-rl")
+        .text("Proportions of women by birth in %");
 
     //adding title   
     svg1
         .append("text")
-        .attr("x", width1 / 2)
-        .attr("y", 25)
-        // .attr("class", "title")
+        .attr("x", width1 / 6)
+        .attr("y", margin1.top - 10)
+        .attr("class", "title")
         .style("font-color", "black")
-        .style("font-size", "22px")
+        .style("font-size", "24px")
         .text("1979");
 
     // add the X gridlines
@@ -129,7 +134,9 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(data => {
         .attr("class", "grid")
         .attr("transform", `translate(0,${height1 - margin1.bottom})`)
         .call(make_x_gridlines()
-            .tickSize(-height1)
+            //.tickSize(-height1)
+            .tickSize(- height1 + 65)
+            //.outerTickSize(0)
             .tickFormat("")
         )
     // add the Y gridlines

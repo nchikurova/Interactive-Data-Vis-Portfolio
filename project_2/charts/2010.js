@@ -32,7 +32,7 @@ d3.csv("../data_project2/2010.csv", d3.autoType).then(data => {
 
     const width4 = 400,
         height4 = 250,
-        margin4 = { top: 5, bottom: 40, left: 40, right: 0 };
+        margin4 = { top: 30, bottom: 40, left: 40, right: 5 };
     axisTicksX = { qty: 20 };
     axisTicksY = { qty: 9 };
     /** SCALES */
@@ -57,7 +57,7 @@ d3.csv("../data_project2/2010.csv", d3.autoType).then(data => {
     const xAxis4 = d3.axisBottom(xScale4).ticks(axisTicksX.qty);
 
     const yAxis4 = d3.axisLeft(yScale4)
-        .ticks((slices4[0].values).length).ticks(axisTicksY.qty);
+        .ticks((slices4[0].values).length).ticks(axisTicksY.qty).tickFormat(d => d + " %");
     console.log(yAxis4)
     // colorScale = d3.scaleLinear().range(["beighe", "red"]).domain(d3.map(data, d => d.b))
 
@@ -118,11 +118,11 @@ d3.csv("../data_project2/2010.csv", d3.autoType).then(data => {
     //adding title   
     svg4
         .append("text")
-        .attr("x", width4 / 2)
-        .attr("y", 25)
-        //.attr("class", "title")
+        .attr("x", width4 / 6)
+        .attr("y", margin4.top - 10)
+        .attr("class", "title")
         .style("font-color", "black")
-        .style("font-size", "22px")
+        .style("font-size", "24px")
         .text("2010");
 
 
@@ -131,7 +131,7 @@ d3.csv("../data_project2/2010.csv", d3.autoType).then(data => {
         .attr("class", "grid")
         .attr("transform", `translate(0,${height4 - margin4.bottom})`)
         .call(make_x_gridlines()
-            .tickSize(-height4)
+            .tickSize(-height4 + 65)
             .tickFormat("")
         )
     // add the Y gridlines
@@ -139,8 +139,7 @@ d3.csv("../data_project2/2010.csv", d3.autoType).then(data => {
         .attr("class", "grid")
         .attr("transform", `translate(${margin4.left},0)`)
         .call(make_y_gridlines()
-            .tickSize(- width4
-            )
+            .tickSize(- width4)
             .tickFormat("")
         )
 

@@ -32,7 +32,7 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
 
     const width2 = 400,
         height2 = 250,
-        margin2 = { top: 5, bottom: 40, left: 40, right: 0 };
+        margin2 = { top: 30, bottom: 40, left: 40, right: 5 };
     axisTicksX = { qty: 20 };
     axisTicksY = { qty: 9 };
     /** SCALES */
@@ -56,7 +56,7 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
     const xAxis2 = d3.axisBottom(xScale2).ticks(axisTicksX.qty);
 
     const yAxis2 = d3.axisLeft(yScale2)
-        .ticks((slices2[0].values).length).ticks(axisTicksY.qty);
+        .ticks((slices2[0].values).length).ticks(axisTicksY.qty).tickFormat(d => d + " %");
     console.log(yAxis2)
     // colorScale = d3.scaleLinear().range(["beighe", "red"]).domain(d3.map(data, d => d.b))
 
@@ -117,11 +117,11 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
     //adding title   
     svg2
         .append("text")
-        .attr("x", width2 / 2)
-        .attr("y", 25)
-        // .attr("class", "title")
+        .attr("x", width2 / 6)
+        .attr("y", margin2.top - 10)
+        .attr("class", "title")
         .style("font-color", "black")
-        .style("font-size", "22px")
+        .style("font-size", "24px")
         .text("1989");
 
     // add the X gridlines
@@ -129,7 +129,7 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
         .attr("class", "grid")
         .attr("transform", `translate(0,${height2 - margin2.bottom})`)
         .call(make_x_gridlines()
-            .tickSize(-height2)
+            .tickSize(-height2 + 65)
             .tickFormat("")
         )
     // add the Y gridlines
@@ -140,5 +140,36 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
             .tickSize(- width2)
             .tickFormat("")
         )
+    // append legends using example https://www.d3-graph-gallery.com/graph/custom_legend.html
+    keys = ["1st births", "2nd births", "3rd births", "4th births", "5th + births"]
+    // if our columns were named as above, for keys we could use data.columns.slice(1)
+    const color = d3.scaleOrdinal().domain(["1st births", "2nd births", "3rd births", "4th births", "5th + births"]).range(["#1280C2", "#F19322", " #949290", "#EDD151", "#77D9DF"])
+
+    // Add one dot in the legend for each name.
+    svg2.selectAll("myrect")
+        .data(keys)
+        .enter()
+        .append("rect")
+        .attr("width", 12)
+        .attr("height", 12)
+        .attr("x", 308)
+        .attr("y", function (d, i) { return 5 + i * 25 }) // 100 is where the first dot appears. 25 is the distance between dots
+        //.attr("r", 6)
+        .style("fill", function (d) { return color(d) })
+        .style("stroke", "black")
+        .style("stroke-width", 0.5)
+
+    // Add one dot in the legend for each name.
+    svg2.selectAll("mylabels")
+        .data(keys)
+        .enter()
+        .append("text")
+        .attr("x", 325)
+        .attr("y", function (d, i) { return 12 + i * 25 }) // 10 is where the first dot appears. 25 is the distance between dots
+        //.style("fill", function (d) { return color(d) }) // if you want text the same color as circles
+        .style("fill", "black")
+        .text(function (d) { return d })
+        .attr("text-anchor", "left")
+        .style("alignment-baseline", "middle")
 
 });
