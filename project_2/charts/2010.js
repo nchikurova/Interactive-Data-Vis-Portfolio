@@ -13,19 +13,19 @@ d3.csv("../data_project2/2010.csv", d3.autoType).then(data => {
         };
     });
 
-    console.log("Column headers", data.columns);
-    console.log("Column headers without age", data.columns.slice(1));
-    // returns the sliced dataset
-    console.log("slices4", slices4);
-    // returns the first slice
-    console.log("First slice", slices4[0]);
-    // returns the array in the first slice
-    console.log("A array", slices4[0].values);
-    // returns the date of the first row in the first slice
-    console.log("Age element", slices4[0].values[0].Age);
-    // returns the array's length
-    console.log("Array length", (slices4[0].values).length);
-    console.log(data);
+    // console.log("Column headers", data.columns);
+    // console.log("Column headers without age", data.columns.slice(1));
+    // // returns the sliced dataset
+    // console.log("slices4", slices4);
+    // // returns the first slice
+    // console.log("First slice", slices4[0]);
+    // // returns the array in the first slice
+    // console.log("A array", slices4[0].values);
+    // // returns the date of the first row in the first slice
+    // console.log("Age element", slices4[0].values[0].Age);
+    // // returns the array's length
+    // console.log("Array length", (slices4[0].values).length);
+    // console.log(data);
 
     /** CONSTANTS */
     // constants help us reference the same values throughout our code
