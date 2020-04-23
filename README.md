@@ -1,5 +1,5 @@
 # Interactive Data Visualization Final Portfolio
 
-## [Project 1. Exploratory Visualization](https://github.com/nchikurova/Interative-Data-Vis-Portfolio/tree/master/project_1)
+## [Project 1. Exploratory Visualization](https://github.com/nchikurova/Interative-Data-Vis-Portfolio/tree/master/exploratory_project)
 
 ## [Project 2. Narrative](https://github.com/nchikurova/Interative-Data-Vis-Portfolio/tree/master/project_2)
