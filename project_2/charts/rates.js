@@ -1,31 +1,31 @@
 d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
-    // from http://datawanderings.com/2019/10/28/tutorial-making-a-line-chart-in-d3-js-v-5/
+    // examples used  http://datawanderings.com/2019/10/28/tutorial-making-a-line-chart-in-d3-js-v-5/
     const slices5 = data.columns.slice(1).map(function (id) {
         return {
             id: id,
             values: data.map(function (d) {
                 return {
                     Year: new Date(d.Year),
-                    measurement4: +d[id]
+                    measurement5: +d[id]
 
                 };
             })
         };
     });
 
-    console.log("Column headers", data.columns);
-    console.log("Column headers without year", data.columns.slice(1));
-    // returns the sliced dataset
-    console.log("slices5", slices5);
-    // returns the first slice
-    console.log("First slice", slices5[0]);
-    // returns the array in the first slice
-    console.log("A array", slices5[0].values);
-    // returns the date of the first row in the first slice
-    console.log("Year element", slices5[0].values[0].Year);
-    // returns the array's length
-    console.log("Array length", (slices5[0].values).length);
-    console.log(data);
+    // console.log("Column headers", data.columns);
+    // console.log("Column headers without year", data.columns.slice(1));
+    // // returns the sliced dataset
+    // console.log("slices5", slices5);
+    // // returns the first slice
+    // console.log("First slice", slices5[0]);
+    // // returns the array in the first slice
+    // console.log("A array", slices5[0].values);
+    // // returns the date of the first row in the first slice
+    // console.log("Year element", slices5[0].values[0].Year);
+    // // returns the array's length
+    // console.log("Array length", (slices5[0].values).length);
+    // console.log(data);
 
     /** CONSTANTS */
     // constants help us reference the same values throughout our code
@@ -43,23 +43,35 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
             return d.Year
         }))
         .range([margin5.left, width5 - margin5.right]);
-    //console.log(xScale3)
 
+    console.log(xScale5.domain())
     const yScale5 = d3
         .scaleLinear()
         //.domain(d3.extent(data, d => d.values))
-        .domain([0, 4])
+        //.domain([0, 4])
+        .domain([
+            (0), d3.max(slices5, function (c) {
+                return d3.max(c.values, function (d) {
+                    return d.measurement5;
+                });
+            })
+        ])
         .range([height5 - margin5.bottom, margin5.top]);
 
-    console.log(yScale5)
+    //console.log(yScale5.domain())
 
-    const xAxis5 = d3.axisBottom(xScale5).ticks(axisTicksX.qty).tickFormat(d3.timeFormat('%Y'));
+    const xAxis5 = d3.axisBottom(xScale5).ticks(axisTicksX.qty).tickFormat(d3.format("d"));
 
     const yAxis5 = d3.axisLeft(yScale5)
         .ticks((slices5[0].values).length).ticks(axisTicksY.qty);
-    console.log(yAxis5)
-    colorScale = d3.scaleLinear().range(["beighe", "red"]).domain(d3.map(data, d => d.id))
+    //console.log(yAxis5)
+    //var colorScale = d3.scaleLinear()
+    // .range(["beige", "red"])
+    //.domain(d3.map(data[0]).filter)
+    //.domain(d3.map(data, d => d.id))
+    //keys = data.columns.slices(1)
 
+    //console.log(colorScale.domain())
     /** MAIN CODE */
     const svg5 = d3
         .select("#d3-container5")
@@ -92,27 +104,37 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
         .data(slices5)
         .enter()
         .append("g")
+    //.attr("fill", d => colorScale(d.id))
 
     lines5.append("path")
+        //.attr("class", "lines5")
         .attr("class", ids)
-        //.attr("d", d => lineFunc5(d.values))
-        // .call(selection => selection
-        //     .attr("fill", "black")
+        .attr("stroke", d => {
+            if (d.id === "Russian Federation") return "black";
+            else return "#9EA19D"
+        })
+        .attr("fill", " none")
+        .attr("stroke-width", d => {
+            if (d.id === "Russian Federation") return 4;
+            else return 2
+        })
         .attr("d", d => lineFunc5(d.values))
-    //)
-    //.attr("d", d => lineFunc5(d.values))
-    //.attr("d", function (d) { return lineFunc5(d.values); });
+    //.attr("stroke", (d, i) => colorScale(i))
+
 
     svg5
         .append("g")
         .attr("class", "axis x-axis")
         .attr("transform", `translate(0,${height5 - margin5.bottom})`)
         .call(xAxis5)
+        .attr("font-size", 16)
         .append("text")
         .attr("class", "axis-label")
+        .attr("font-size", 16)
         .attr("x", "50%")
         .attr("dy", "3em")
         .text("Year");
+
     svg5
         .append("g")
         .attr("class", "axis y-axis")
@@ -123,8 +145,8 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
     svg5
         .append("text")
         .attr("x", width5 / 2)
-        .attr("y", 25)
-        //.attr("class", "title")
+        .attr("y", 15)
+        .attr("class", "title")
         .style("font-color", "black")
         .style("font-size", "22px")
         .text("Fertility rates");
@@ -146,6 +168,20 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
             .tickSize(- width5)
             .tickFormat("")
         )
+    svg5.append("line")
+        .attr("x1", 700)
+        .attr("y1", 70)
+        .attr("x2", 735)
+        .attr("y2", 95)
+        .attr("stroke", "black")
+        .style("stroke-width", 2)
+
+    svg5.append("text")
+        .attr("x", 615)
+        .attr("y", 65)
+        .text("Russian Federation")
+        .attr("fill", "black")
+        .style("font-size", 18)
 
 
 });

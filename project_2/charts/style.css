@@ -1,52 +1,61 @@
 body {
     /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
     font-family: "Source Sans Pro", 'Arial Narrow Bold';
+   
     fill: black;
     padding: 1em 3em;
-  }
-#text{
+    }
+#textPart1{
     position: absolute;
+    left: 500 px;
+    top: 200px;
     height: 1000px;
-    width: 1000px;
+    width: 800px;
     font-size: 20px;
-}
+    }
  /* containers position */   
  #d3-container1{   
     position:absolute;
-    top:560px;
+    top:760px;
     left:200px;
     width:500px; 
     height: 250px; 
-    
- }
+    }
  #d3-container2{   
     position:absolute;
-    top:560px;
+    top:760px;
     left:640px;
     width:500px; 
     height: 250px; 
- }
+    }
  #d3-container3 {   
     position:absolute;
-    top:860px;
+    top:1060px;
     left:200px;
     width:500px; 
     height: 250px;
- }
+    }
  #d3-container4 {   
     position:absolute;
-    top:860px;
+    top:1060px;
     left:640px;
     width:500px; 
     height: 250px; 
-        }
-    #d3-container5 {   
+    }
+#d3-container5 {   
     position:absolute;
-    top:1160px;
+    top:260px;
     left:200px;
     width:800px; 
     height: 250px;
-         }
+    }
+#d3-container6 {   
+    position:absolute;
+    top:1560px;
+    left:180px;
+    width:940px; 
+    height: 580px;
+    }
   /* LINE CHARTS*/
 path.line-0 {
     fill: rgb(202, 227, 241);
@@ -60,7 +69,7 @@ path.line-1 {
     }
 path.line-2 {
     fill: none;
-    stroke: #949290;
+    stroke: #44A62C;
     stroke-width: 2px;
     }
 path.line-3 {
@@ -84,27 +93,81 @@ path.line-4 {
         stroke-width: 0;
       }
       
-  .axis-label {
+.axis-label {
     font-size: 12px;
     fill: black;
     text-anchor: middle;
   }
-  .title{
-      font-size: 14px;
-      stroke: black;
-      opacity: 1;
-      height: 30px;
-      width: 40px;
+.title{
+    font-size: 14px;
+    stroke: black;
+    opacity: 1;
+    height: 30px;
+    width: 40px;
   }
 
-  path.rate-0 {
+/* path.rate-0 {
     fill: none;
-    stroke:#1280C2 ;
+    stroke:#9EA19D ;
     stroke-width: 2px;
     }   
-    path.rate-1 {
-        fill: none;
-        stroke:blue ;
-        stroke-width: 2px;
-        }   
-  
+path.rate-1 {
+    fill: none;
+    stroke:#9EA19D ;
+    stroke-width: 2px;
+    }  
+path.rate-2 {
+    fill: none;
+    stroke:#9EA19D;
+    stroke-width: 2px;
+    }  
+path.rate-3 {
+    fill: none;
+    stroke:#9EA19D ;
+    stroke-width: 2px;
+    } 
+path.rate-4 {
+    fill: none;
+    stroke:#9EA19D ;
+    stroke-width: 2px;
+    } 
+path.rate-5 {
+    fill: none;
+    stroke:#9EA19D ;
+    stroke-width: 2px;
+    }  
+path.rate-6 {
+    fill: none;
+    stroke:#9EA19D ;
+    stroke-width: 2px;
+    } 
+path.rate-7 {
+    fill: none;
+    stroke:#9EA19D ;
+    stroke-width: 2px;
+    }   */
+
+/* .tooltip {	
+    position: absolute;			
+    text-align: left;			
+    /* width: 150px; */
+    /* height: 120px; */
+    /* padding: 8px;			
+    font: 12px;		
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: black;	
+    background: white;
+    pointer-events: none;			
+}   */ 
+.rects:hover {
+stroke: black;
+stroke-width: 3px;
+}
+.text{
+    pointer-events: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+

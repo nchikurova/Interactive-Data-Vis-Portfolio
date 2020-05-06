@@ -47,18 +47,17 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
 
     const yScale2 = d3
         .scaleLinear()
-        //.domain(d3.extent(data, d => d.b1))
+
         .domain([0, 0.16])
         .range([height2 - margin2.bottom, margin2.top]);
 
-    console.log(yScale2)
+    //console.log(yScale2)
 
     const xAxis2 = d3.axisBottom(xScale2).ticks(axisTicksX.qty);
 
     const yAxis2 = d3.axisLeft(yScale2)
         .ticks((slices2[0].values).length).ticks(axisTicksY.qty).tickFormat(d => d + " %");
-    console.log(yAxis2)
-    // colorScale = d3.scaleLinear().range(["beighe", "red"]).domain(d3.map(data, d => d.b))
+    //console.log(yAxis2)
 
     /** MAIN CODE */
     const svg2 = d3
@@ -143,7 +142,7 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
     // append legends using example https://www.d3-graph-gallery.com/graph/custom_legend.html
     keys = ["1st births", "2nd births", "3rd births", "4th births", "5th + births"]
     // if our columns were named as above, for keys we could use data.columns.slice(1)
-    const color = d3.scaleOrdinal().domain(["1st births", "2nd births", "3rd births", "4th births", "5th + births"]).range(["#1280C2", "#F19322", " #949290", "#EDD151", "#77D9DF"])
+    const color = d3.scaleOrdinal().domain(["1st births", "2nd births", "3rd births", "4th births", "5th + births"]).range(["#1280C2", "#F19322", " #44A62C", "#EDD151", "#77D9DF"])
 
     // Add one dot in the legend for each name.
     svg2.selectAll("myrect")
@@ -153,11 +152,10 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
         .attr("width", 12)
         .attr("height", 12)
         .attr("x", 308)
-        .attr("y", function (d, i) { return 5 + i * 25 }) // 100 is where the first dot appears. 25 is the distance between dots
-        //.attr("r", 6)
+        .attr("y", function (d, i) { return 5 + i * 20 }) // 100 is where the first dot appears. 25 is the distance between dots
         .style("fill", function (d) { return color(d) })
-        .style("stroke", "black")
-        .style("stroke-width", 0.5)
+    //.style("stroke", "black")
+    //.style("stroke-width", 0.5)
 
     // Add one dot in the legend for each name.
     svg2.selectAll("mylabels")
@@ -165,7 +163,7 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
         .enter()
         .append("text")
         .attr("x", 325)
-        .attr("y", function (d, i) { return 12 + i * 25 }) // 10 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function (d, i) { return 12 + i * 20 }) // 10 is where the first dot appears. 25 is the distance between dots
         //.style("fill", function (d) { return color(d) }) // if you want text the same color as circles
         .style("fill", "black")
         .text(function (d) { return d })

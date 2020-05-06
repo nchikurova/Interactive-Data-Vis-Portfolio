@@ -1,4 +1,4 @@
-d3.csv("../data_project2/1979.csv", d3.autoType).then(data => {
+d3.csv("../data_project2/1979.csv", d3.autoType).then(function (data) {
     // from http://datawanderings.com/2019/10/28/tutorial-making-a-line-chart-in-d3-js-v-5/
     const slices = data.columns.slice(1).map(function (id) {
         return {
@@ -44,21 +44,26 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(data => {
             return d.Age
         }))
         .range([margin1.left, width1 - margin1.right]);
-    //console.log(xScale1)
+    console.log(xScale1.domain())
 
     const yScale1 = d3
         .scaleLinear()
-        //.domain(d3.extent(data, d => d.b1))
-        .domain([0, 0.16])
-        .range([height1 - margin1.bottom, margin1.top]);
+        .domain([0, 0.16]) // using this for all for graphs to show th difference better
+        .range([height1 - margin1.bottom, margin1.top])
+    // .domain([(0), d3.max(slices, function (c) {
+    //     return d3.max(c.values, function (d) {
+    //         return d.measurement;
+    //     });
+    // })
+    // ]);;
 
-    console.log(yScale1)
+    //console.log(yScale1)
 
     const xAxis1 = d3.axisBottom(xScale1).ticks(axisTicksX.qty);
 
     const yAxis1 = d3.axisLeft(yScale1)
         .ticks((slices[0].values).length).ticks(axisTicksY.qty).tickFormat(d => d + " %");
-    console.log(yAxis1)
+    //console.log(yAxis1)
 
     /** MAIN CODE */
     const svg1 = d3
@@ -95,8 +100,12 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(data => {
 
     lines1.append("path")
         .attr("class", ids)
-        .attr("d", function (d) { return lineFunc1(d.values); });
+        // .attr("d", function (d) {
+        //     return lineFunc1(d.values);
+        // });
+        .attr('d', d => lineFunc1(d.values))
 
+    //console.log(d.measurment)
     svg1
         .append("g")
         .attr("class", "axis x-axis")
@@ -134,9 +143,7 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(data => {
         .attr("class", "grid")
         .attr("transform", `translate(0,${height1 - margin1.bottom})`)
         .call(make_x_gridlines()
-            //.tickSize(-height1)
             .tickSize(- height1 + 65)
-            //.outerTickSize(0)
             .tickFormat("")
         )
     // add the Y gridlines

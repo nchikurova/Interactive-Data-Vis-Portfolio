@@ -52,13 +52,13 @@ d3.csv("../data_project2/2002.csv", d3.autoType).then(data => {
         .domain([0, 0.16])
         .range([height3 - margin3.bottom, margin3.top]);
 
-    console.log(yScale3)
+    //console.log(yScale3)
 
     const xAxis3 = d3.axisBottom(xScale3).ticks(axisTicksX.qty);
 
     const yAxis3 = d3.axisLeft(yScale3)
         .ticks((slices3[0].values).length).ticks(axisTicksY.qty).tickFormat(d => d + " %");
-    console.log(yAxis3)
+    //console.log(yAxis3)
     // colorScale = d3.scaleLinear().range(["beighe", "red"]).domain(d3.map(data, d => d.b))
 
     /** MAIN CODE */
