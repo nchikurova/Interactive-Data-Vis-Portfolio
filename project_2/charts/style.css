@@ -5,56 +5,64 @@ body {
     fill: black;
     padding: 1em 3em;
     }
-#textPart1{
-    position: absolute;
-    left: 500 px;
-    top: 200px;
-    height: 1000px;
-    width: 800px;
-    font-size: 20px;
-    }
+
+    /* #textPart2{
+        position: absolute;
+        left: 1000 px;
+        top: 200px;
+        height: 1000px;
+        width: 800px;
+        font-size: 20px;
+        }     */
  /* containers position */   
  #d3-container1{   
     position:absolute;
-    top:760px;
-    left:200px;
+    top:2260px;
+    left:160px;
     width:500px; 
     height: 250px; 
     }
  #d3-container2{   
     position:absolute;
-    top:760px;
-    left:640px;
+    top:2260px;
+    left:580px;
     width:500px; 
     height: 250px; 
     }
  #d3-container3 {   
     position:absolute;
-    top:1060px;
-    left:200px;
+    top:2860px;
+    left:160px;
     width:500px; 
     height: 250px;
     }
  #d3-container4 {   
     position:absolute;
-    top:1060px;
-    left:640px;
+    top:2860px;
+    left:580px;
     width:500px; 
     height: 250px; 
     }
 #d3-container5 {   
     position:absolute;
-    top:260px;
+    top:1040px;
     left:200px;
     width:800px; 
     height: 250px;
     }
 #d3-container6 {   
     position:absolute;
-    top:1560px;
-    left:180px;
+    top:4700px;
+    left:140px;
     width:940px; 
     height: 580px;
+    }
+#d3-container7 {   
+    position:absolute;
+    top:3760px;
+    left:160px;
+    width:840px; 
+    height: 360px;
     }
   /* LINE CHARTS*/
 path.line-0 {
@@ -82,7 +90,7 @@ path.line-4 {
     stroke:#77D9DF;
     stroke-width: 2px;
     }  
-    
+ 
 .grid line {
         stroke: rgb(168, 165, 165);
         stroke-opacity: 0.7;
@@ -105,7 +113,7 @@ path.line-4 {
     height: 30px;
     width: 40px;
   }
-
+/* if I want different colors for lines in rates chart
 /* path.rate-0 {
     fill: none;
     stroke:#9EA19D ;
@@ -147,12 +155,12 @@ path.rate-7 {
     stroke-width: 2px;
     }   */
 
-/* .tooltip {	
+.tooltip {	
     position: absolute;			
     text-align: left;			
     /* width: 150px; */
     /* height: 120px; */
-    /* padding: 8px;			
+    padding: 8px;			
     font: 12px;		
     border-style: solid;
     border-width: thin;
@@ -160,14 +168,14 @@ path.rate-7 {
     color: black;	
     background: white;
     pointer-events: none;			
-}   */ 
+}  
 .rects:hover {
 stroke: black;
 stroke-width: 3px;
 }
-.text{
+/* .text{
     pointer-events: none;
     font-size: 14px;
     font-weight: bold;
-}
+} */
 

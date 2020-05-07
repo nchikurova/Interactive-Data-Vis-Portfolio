@@ -10,8 +10,8 @@ d3.csv("../data_project2/birth_by_age_group.csv", d3.autoType).then(data => {
     /** CONSTANTS */
     // constants help us reference the same values throughout our code
     const margin6 = { top: 20, bottom: 100, left: 60, right: 60 },
-        width6 = 940,
-        height6 = 580
+        width6 = 840,
+        height6 = 500
 
     const subgroups = data.columns.slice(1)
     //const groups = d3.map(data, function (d) { return (d.Year) }).keys()
@@ -81,21 +81,21 @@ d3.csv("../data_project2/birth_by_age_group.csv", d3.autoType).then(data => {
             const yPosition = d3.mouse(this)[1] - 25;
             // console.log(yPosition)
             tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")").attr("opacity", 1);
-            tooltip.select("text").text(d[1] - d[0] + " thousands births" + " " + data.columns.slice(1))
-            console.log(subgroups)
+            tooltip.select("text").text(d[1] - d[0] + " thousands births")//+ " " + data.columns.slice(1))
+            console.log(d.subgroups)
             //console.log(d[1] - d[0])
 
 
         });
     // adding title
-    svg6
-        .append("text")
-        .attr("x", width6 / 7)
-        .attr("y", 3)
-        .attr("class", "title")
-        .style("font-color", "black")
-        .style("font-size", "24px")
-        .text("Number of births by 5-year age group of mother (thousands)");
+    // svg6
+    //     .append("text")
+    //     .attr("x", width6 / 7)
+    //     .attr("y", 3)
+    //     .attr("class", "title")
+    //     .style("font-color", "black")
+    //     .style("font-size", "24px")
+    //     .text("Number of births by 5-year age group of mother (thousands)");
 
     // add the X gridlines
     svg6
@@ -122,14 +122,14 @@ d3.csv("../data_project2/birth_by_age_group.csv", d3.autoType).then(data => {
         .style("display", "none");
 
     tooltip.append("rect")
-        .attr("width", 160)
+        .attr("width", 170)
         .attr("height", 28)
         .attr("fill", "white")
         .style("opacity", 0.9)
         .attr("stroke", "black")
 
     tooltip.append("text")
-        .attr("x", 75)
+        .attr("x", 80)
         .attr("dy", "1.2em")
         .style("text-anchor", "middle")
         .attr("font-size", "14px")

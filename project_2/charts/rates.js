@@ -60,18 +60,12 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
 
     //console.log(yScale5.domain())
 
-    const xAxis5 = d3.axisBottom(xScale5).ticks(axisTicksX.qty).tickFormat(d3.format("d"));
+    const xAxis5 = d3.axisBottom(xScale5).ticks(axisTicksX.qty).tickFormat(d3.format("d")); //'.tickFormat(d3.format("d"))' takes away comma in year
 
     const yAxis5 = d3.axisLeft(yScale5)
         .ticks((slices5[0].values).length).ticks(axisTicksY.qty);
     //console.log(yAxis5)
-    //var colorScale = d3.scaleLinear()
-    // .range(["beige", "red"])
-    //.domain(d3.map(data[0]).filter)
-    //.domain(d3.map(data, d => d.id))
-    //keys = data.columns.slices(1)
 
-    //console.log(colorScale.domain())
     /** MAIN CODE */
     const svg5 = d3
         .select("#d3-container5")
@@ -98,60 +92,6 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
         return d3.axisLeft(yScale5)
             .ticks(8)
     }
-
-    const lines5 = svg5
-        .selectAll("lines")
-        .data(slices5)
-        .enter()
-        .append("g")
-    //.attr("fill", d => colorScale(d.id))
-
-    lines5.append("path")
-        //.attr("class", "lines5")
-        .attr("class", ids)
-        .attr("stroke", d => {
-            if (d.id === "Russian Federation") return "black";
-            else return "#9EA19D"
-        })
-        .attr("fill", " none")
-        .attr("stroke-width", d => {
-            if (d.id === "Russian Federation") return 4;
-            else return 2
-        })
-        .attr("d", d => lineFunc5(d.values))
-    //.attr("stroke", (d, i) => colorScale(i))
-
-
-    svg5
-        .append("g")
-        .attr("class", "axis x-axis")
-        .attr("transform", `translate(0,${height5 - margin5.bottom})`)
-        .call(xAxis5)
-        .attr("font-size", 16)
-        .append("text")
-        .attr("class", "axis-label")
-        .attr("font-size", 16)
-        .attr("x", "50%")
-        .attr("dy", "3em")
-        .text("Year");
-
-    svg5
-        .append("g")
-        .attr("class", "axis y-axis")
-        .attr("transform", `translate(${margin5.left},0)`)
-        .call(yAxis5)
-
-    //adding title   
-    svg5
-        .append("text")
-        .attr("x", width5 / 2)
-        .attr("y", 15)
-        .attr("class", "title")
-        .style("font-color", "black")
-        .style("font-size", "22px")
-        .text("Fertility rates");
-
-
     // add the X gridlines
     svg5.append("g")
         .attr("class", "grid")
@@ -168,6 +108,74 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
             .tickSize(- width5)
             .tickFormat("")
         )
+    const lines5 = svg5
+        .selectAll("lines")
+        .data(slices5)
+        .enter()
+        .append("g")
+
+    lines5.append("path")
+        //.attr("class", "lines5")
+        .attr("class", ids)
+        .attr("stroke", d => {
+            if (d.id === "Russian Federation") return "black";
+            else return "#9EA19D"
+        })
+        .attr("fill", " none")
+        .attr("stroke-width", d => {
+            if (d.id === "Russian Federation") return 4;
+            else return 2
+        })
+        .attr("d", d => lineFunc5(d.values))
+        .on('mouseover', function (d) {
+            //console.log(d.Year)
+            div.style('opacity', 0.9)
+                .html(d.id) //+ "<p style=' '><strong>" + d.id.values + d.id.Year + "</strong></p>")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on('mouseout', function (d) {
+            div.style('opacity', 0);
+        });
+
+
+    div = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+        .attr("position", "absolute")
+    svg5
+        .append("g")
+        .attr("class", "axis x-axis")
+        .attr("transform", `translate(0,${height5 - margin5.bottom})`)
+        .call(xAxis5)
+        .attr("font-size", 16)
+    // .append("text")
+    // .attr("class", "axis-label")
+    // .attr("font-size", 16)
+    // .attr("x", "50%")
+    // .attr("dy", "3em")
+    // .text("Year");
+
+    svg5
+        .append("g")
+        .attr("class", "axis y-axis")
+        .attr("transform", `translate(${margin5.left},0)`)
+        .call(yAxis5)
+
+    //adding title   
+    // svg5
+    //     .append("text")
+    //     .attr("x", width5 / 4)
+    //     .attr("y", 15)
+    //     .attr("class", "title")
+    //     .style("font-color", "black")
+    //     .style("font-size", "22px")
+    //     .text("Fertility rates in Eastern European countries");
+
+
+
+    // Adding line and text to imphasize Ruassian Federation
     svg5.append("line")
         .attr("x1", 700)
         .attr("y1", 70)
