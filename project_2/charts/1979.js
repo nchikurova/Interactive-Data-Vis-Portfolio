@@ -50,12 +50,6 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(function (data) {
         .scaleLinear()
         .domain([0, 0.16]) // using this for all for graphs to show th difference better
         .range([height1 - margin1.bottom, margin1.top])
-    // .domain([(0), d3.max(slices, function (c) {
-    //     return d3.max(c.values, function (d) {
-    //         return d.measurement;
-    //     });
-    // })
-    // ]);;
 
     //console.log(yScale1)
 

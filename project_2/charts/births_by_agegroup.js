@@ -18,7 +18,9 @@ d3.csv("../data_project2/birth_by_age_group.csv", d3.autoType).then(data => {
     //data.sort(function (a, b) { return b.total - a.total; });
     const groups = d3.map(data, function (d) { return (d.Year) }).keys()
     const padding = 0.1;
-
+    console.log(data.columns.slice(1))
+    data.forEach(d => console.log(data.columns.slice(1)))
+    //console.log
     /** SCALES */
     const svg6 = d3
         .select("#d3-container6")
@@ -83,6 +85,7 @@ d3.csv("../data_project2/birth_by_age_group.csv", d3.autoType).then(data => {
             tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")").attr("opacity", 1);
             tooltip.select("text").text(d[1] - d[0] + " thousands births")//+ " " + data.columns.slice(1))
             console.log(d.subgroups)
+            console.log("data", data)
             //console.log(d[1] - d[0])
 
 

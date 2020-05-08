@@ -1,12 +1,16 @@
 
-#text {    
+
+
+#text0 {    
 	position:absolute;
 	top:90px;
 	left:520px;
 	width:900px;
   height: 300px; 
   font-size: 18px; 
+
 }
+
 #text1 {
   position: absolute;
   top: 420px;
@@ -33,9 +37,11 @@
   height: 300px;
   font-size: 18px;
 }
+
+/* Another way to add legends with separate html files
 .legend1 {
   position: absolute;
-  top: 415px;
+  top: 412px;
   left: 1100px;
   width: 20px;
   height: 20px;
@@ -45,7 +51,7 @@
 }
 .legend2 {
   position: absolute;
-  top: 438px;
+  top: 435px;
   left: 1133px;
   width: 20px;
   height: 20px;
@@ -55,10 +61,10 @@
 }
 .legendtext{
   position: absolute;
-  top: 420px;
+  top: 417px;
   left: 1135px;
    width: 100; 
-}
+} */
 
 /* barchart */
 #d3-container {    
@@ -68,6 +74,7 @@
 	/* width:600px; */
 	height: 250px; 
 }
+
 /* lines */
 .line1 { 
   top:230px;
@@ -165,6 +172,10 @@ h1 {
     stroke: white;
     fill:  #D3D0D0;
   }
+  .country1:hover {
+    /* fill: black; */
+    stroke-width: 4px;
+    }
   .country {
     stroke-width:  1px;
     stroke:black;
@@ -208,4 +219,40 @@ body {
     background: white;
     font-weight: 400;
     pointer-events: none;			
+}
+/* table*/
+#d3-container5 {
+  position: absolute;
+  top: 340px;
+  left: 1100px;
+  width: 60px;
+  height: 20px;
+  margin: 5px;
+  fill: none;
+}
+section {
+  padding: 1em 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  padding: 0 0.5em;
+}
+
+tr {
+  border-bottom: solid 1px #d3d3d3;
+  line-height: 1.75;
+}
+
+td {
+  text-align: right;
+  padding: 0 0.5em;
+  background-color: none;
+}
+
+.high {
+  background-color:none;
 }

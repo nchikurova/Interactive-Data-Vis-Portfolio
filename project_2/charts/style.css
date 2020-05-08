@@ -17,28 +17,28 @@ body {
  /* containers position */   
  #d3-container1{   
     position:absolute;
-    top:2260px;
+    top:2200px;
     left:160px;
     width:500px; 
     height: 250px; 
     }
  #d3-container2{   
     position:absolute;
-    top:2260px;
+    top:2200px;
     left:580px;
     width:500px; 
     height: 250px; 
     }
  #d3-container3 {   
     position:absolute;
-    top:2860px;
+    top:2760px;
     left:160px;
     width:500px; 
     height: 250px;
     }
  #d3-container4 {   
     position:absolute;
-    top:2860px;
+    top:2760px;
     left:580px;
     width:500px; 
     height: 250px; 
@@ -52,14 +52,14 @@ body {
     }
 #d3-container6 {   
     position:absolute;
-    top:4700px;
+    top:4600px;
     left:140px;
     width:940px; 
     height: 580px;
     }
 #d3-container7 {   
     position:absolute;
-    top:3760px;
+    top:3660px;
     left:160px;
     width:840px; 
     height: 360px;
@@ -173,9 +173,5 @@ path.rate-7 {
 stroke: black;
 stroke-width: 3px;
 }
-/* .text{
-    pointer-events: none;
-    font-size: 14px;
-    font-weight: bold;
-} */
+
 

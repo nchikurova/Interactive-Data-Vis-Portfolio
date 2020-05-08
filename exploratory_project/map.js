@@ -46,7 +46,7 @@ d3.json("../data/custom.geo.json", d3.autoType).
                     .duration(50)
                     .style('opacity', 0.8);
                 div
-                    .html("Country:" + d.properties.admin)
+                    .html("Country: " + d.properties.admin)
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
             })
