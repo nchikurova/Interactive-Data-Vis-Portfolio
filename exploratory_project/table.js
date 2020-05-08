@@ -1,4 +1,4 @@
-d3.csv("../../data/table.csv").then(data => {
+d3.csv("../data/table.csv").then(data => {
     // once the data loads, console log it
     console.log("data", data);
 
