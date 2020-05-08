@@ -13,19 +13,19 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(function (data) {
         };
     });
 
-    // console.log("Column headers", data.columns);
-    // console.log("Column headers without age", data.columns.slice(1));
-    // // returns the sliced dataset
-    // console.log("Slices", slices);
-    // // returns the first slice
-    // console.log("First slice", slices[0]);
-    // // returns the array in the first slice
-    // console.log("A array", slices[0].values);
-    // // returns the date of the first row in the first slice
-    // console.log("Age element", slices[0].values[0].Age);
-    // // returns the array's length
-    // console.log("Array length", (slices[0].values).length);
-    // console.log(data);
+    console.log("Column headers", data.columns);
+    console.log("Column headers without age", data.columns.slice(1));
+    // returns the sliced dataset
+    console.log("Slices", slices);
+    // returns the first slice
+    console.log("First slice", slices[0]);
+    // returns the array in the first slice
+    console.log("A array", slices[0].values);
+    // returns the date of the first row in the first slice
+    console.log("Age element", slices[0].values[0].Age);
+    // returns the array's length
+    console.log("Array length", (slices[0].values).length);
+    console.log(data);
 
     /** CONSTANTS */
     // constants help us reference the same values throughout our code
@@ -44,7 +44,7 @@ d3.csv("../data_project2/1979.csv", d3.autoType).then(function (data) {
             return d.Age
         }))
         .range([margin1.left, width1 - margin1.right]);
-    console.log(xScale1.domain())
+    //console.log(xScale1.domain())
 
     const yScale1 = d3
         .scaleLinear()
