@@ -223,6 +223,5 @@ td {
   background-color:none;
 }
 tr:hover { /* hover - changing color when highlighting */
-  /* background-color: #99ddff; */
   background-color: #E2F5FB;
 }

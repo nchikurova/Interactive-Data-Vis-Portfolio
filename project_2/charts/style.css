@@ -6,61 +6,60 @@ body {
     padding: 1em 3em;
     }
 
-    /* #textPart2{
-        position: absolute;
-        left: 1000 px;
-        top: 200px;
-        height: 1000px;
-        width: 800px;
-        font-size: 20px;
-        }     */
- /* containers position */   
- #d3-container1{   
-    position:absolute;
+ /* containers charts */   
+ #d3-container1{ 
+     position: float;  
+    /* position:absolute;
     top:2200px;
-    left:160px;
+    left:160px; */
     width:500px; 
     height: 250px; 
     }
- #d3-container2{   
-    position:absolute;
+ #d3-container2{ 
+    position: float;   
+    /* position:absolute;
     top:2200px;
-    left:580px;
+    left:580px; */
     width:500px; 
     height: 250px; 
     }
- #d3-container3 {   
-    position:absolute;
+ #d3-container3 {  
+    position: float;    
+    /* position:absolute;
     top:2760px;
-    left:160px;
+    left:160px; */
     width:500px; 
     height: 250px;
     }
- #d3-container4 {   
-    position:absolute;
+ #d3-container4 {  
+    position: float;    
+    /* position:absolute;
     top:2760px;
-    left:580px;
+    left:580px; */
     width:500px; 
     height: 250px; 
     }
 #d3-container5 {   
-    position:absolute;
-    top:1740px;
-    left:200px;
+    position: float;
+    /* position:absolute; */
+    /* top:1740px;
+    left:200px; */
     width:800px; 
     height: 250px;
     }
-#d3-container6 {   
-    position:absolute;
+#d3-container6 {  
+    position: float;    
+    /* position:absolute;
     top:4600px;
-    left:140px;
+    left:140px; */
     width:940px; 
     height: 580px;
     }
 #d3-container7 {   
-    position:absolute;
+    position: float;   
+    /* position:absolute;
     top:3660px;
-    left:160px;
+    left:160px; */
     width:840px; 
     height: 360px;
     }

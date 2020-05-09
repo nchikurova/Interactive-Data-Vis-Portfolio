@@ -264,40 +264,40 @@ d3.csv("../data_project2/first_births.csv", d3.autoType).then(function (data) {
         .text("0.086")
 
 
-    const tooltip = d3.select('#tooltip');
-    const tooltipLine = svg7.append('line');
-    tipBox = svg7.append('rect')
-        .attr('width', width7)
-        .attr('height', height7)
-        .attr('opacity', 0)
-        .on('mousemove', drawTooltip)
-        .on('mouseout', removeTooltip);
+    // const tooltip = d3.select('#tooltip');
+    // const tooltipLine = svg7.append('line');
+    // tipBox = svg7.append('rect')
+    //     .attr('width', width7)
+    //     .attr('height', height7)
+    //     .attr('opacity', 0)
+    //     .on('mousemove', drawTooltip)
+    //     .on('mouseout', removeTooltip);
 
-    function removeTooltip() {
-        if (tooltip) tooltip.style('display', 'none');
-        if (tooltipLine) tooltipLine.attr('stroke', 'none');
-    }
-    function drawTooltip() {
-        const age = Math.floor((xScale7.invert(d3.mouse(tipBox.node())[0]) + 5) / 10) * 10;
+    // function removeTooltip() {
+    //     if (tooltip) tooltip.style('display', 'none');
+    //     if (tooltipLine) tooltipLine.attr('stroke', 'none');
+    // }
+    // function drawTooltip() {
+    //     const age = Math.floor((xScale7.invert(d3.mouse(tipBox.node())[0]) + 5) / 10) * 10;
 
-        data.sort((a, b) => {
-            return b.slices.values.find(h => h.age == age).measurement7 - a.slices.values.find(h => h.age == age).measurement7;
-        })
-        console.log(values)
-        tooltipLine.attr('stroke', 'black')
-            .attr('x1', xScale7(age))
-            .attr('x2', xScale7(age))
-            .attr('y1', 0)
-            .attr('y2', height7);
+    //     data.sort((a, b) => {
+    //         return b.slices.values.find(h => h.age == age).measurement7 - a.slices.values.find(h => h.age == age).measurement7;
+    //     })
+    //     console.log(values)
+    //     tooltipLine.attr('stroke', 'black')
+    //         .attr('x1', xScale7(age))
+    //         .attr('x2', xScale7(age))
+    //         .attr('y1', 0)
+    //         .attr('y2', height7);
 
-        tooltip.html(d.Year)
-            .style('display', 'block')
-            .style('left', d3.event.pageX + 20)
-            .style('top', d3.event.pageY - 20)
-            .selectAll()
-            .data(data).enter()
-            .append('div')
-            .style('color', "blue")
-            .html(d => d.id + ': ' + d.slices.find(h => h.age == age).measurement7);
-    }
+    //     tooltip.html(d.Year)
+    //         .style('display', 'block')
+    //         .style('left', d3.event.pageX + 20)
+    //         .style('top', d3.event.pageY - 20)
+    //         .selectAll()
+    //         .data(data).enter()
+    //         .append('div')
+    //         .style('color', "blue")
+    //         .html(d => d.id + ': ' + d.slices.find(h => h.age == age).measurement7);
+    // }
 });

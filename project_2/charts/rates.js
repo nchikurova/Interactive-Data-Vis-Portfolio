@@ -1,11 +1,14 @@
 d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
     // examples used  http://datawanderings.com/2019/10/28/tutorial-making-a-line-chart-in-d3-js-v-5/
+
     const slices5 = data.columns.slice(1).map(function (id) {
         return {
             id: id,
             values: data.map(function (d) {
                 return {
+
                     Year: new Date(d.Year),
+                    //Year: d3.timeParse("%Y")(d.Year),
                     measurement5: +d[id]
 
                 };
@@ -35,20 +38,21 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
         margin5 = { top: 5, bottom: 40, left: 40, right: 0 };
     axisTicksX = { qty: 10 };
     axisTicksY = { qty: 9 };
+
+    //sortedData = data.sort((a, b) => +a.Poland - +b.Poland)
+    //const parser = d3.timeParse("%Y")
+    //const formatter = d3.timeFormat("%Y");
+    //sortedData = data.sort((a, b) => +a.Poland - +b.Poland)
     /** SCALES */
     // reference for d3.scales: https://github.com/d3/d3-scale
     const xScale5 = d3
-        .scaleLinear()
-        .domain(d3.extent(data, function (d) {
-            return d.Year
-        }))
+        .scaleTime()
+        .domain(d3.extent(data, d => d.Year))//d => parser(d.Year)))
         .range([margin5.left, width5 - margin5.right]);
-
+    console.log(xScale5.range())
     console.log(xScale5.domain())
     const yScale5 = d3
         .scaleLinear()
-        //.domain(d3.extent(data, d => d.values))
-        //.domain([0, 4])
         .domain([
             (0), d3.max(slices5, function (c) {
                 return d3.max(c.values, function (d) {
@@ -57,16 +61,18 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
             })
         ])
         .range([height5 - margin5.bottom, margin5.top]);
-
-    //console.log(yScale5.domain())
+    //data.filter(d => d.Year > new Date("1900"))
+    //data.find(d => d.Year > new Date("1900"))
+    console.log(yScale5.domain())
 
     const xAxis5 = d3.axisBottom(xScale5).ticks(axisTicksX.qty).tickFormat(d3.format("d")); //'.tickFormat(d3.format("d"))' takes away comma in year
 
     const yAxis5 = d3.axisLeft(yScale5)
         .ticks((slices5[0].values).length).ticks(axisTicksY.qty);
-    //console.log(yAxis5)
+
 
     /** MAIN CODE */
+
     const svg5 = d3
         .select("#d3-container5")
         .append("svg")
@@ -115,7 +121,6 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
         .append("g")
 
     lines5.append("path")
-        //.attr("class", "lines5")
         .attr("class", ids)
         .attr("stroke", d => {
             if (d.id === "Russian Federation") return "black";
@@ -127,6 +132,32 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
             else return 2
         })
         .attr("d", d => lineFunc5(d.values))
+
+
+        // svg5
+        //     .on("mousemove", function () {
+        //         const [x, y] = d3.mouse(this);
+        //         // finding X
+        //         const closestDate = formatter(xScale5.invert(x));
+        //         console.log(d3.timeParse(closestDate))
+        //         console.log("found using date/x", data.find(d => d.Year === closestDate));
+
+        //         //finding Y
+        //         // const closestY = yScale5.invert(y);
+        //         // const bisector = d3.bisector(d => d.Poland);
+        //         // const closestPolandVal = bisector.right(data, closestY);
+        //         // console.log("found using y/value", data[closestPolandVal]);
+        //         d3.select("text").text(`x:${x}, closestDate:${closestDate}`)
+        //         //d3.select("text").text(`y:${y}, closestY:${closestY}`)
+
+        //         const text = svg5
+        //         .append("text")
+        //         .attr("transform", `translate(100, 100)`)
+        //         .text("");
+
+        //     });
+
+
         .on('mouseover', function (d) {
             //console.log(d.Year)
             div.style('opacity', 0.9)
@@ -163,18 +194,6 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
         .attr("transform", `translate(${margin5.left},0)`)
         .call(yAxis5)
 
-    //adding title   
-    // svg5
-    //     .append("text")
-    //     .attr("x", width5 / 4)
-    //     .attr("y", 15)
-    //     .attr("class", "title")
-    //     .style("font-color", "black")
-    //     .style("font-size", "22px")
-    //     .text("Fertility rates in Eastern European countries");
-
-
-
     // Adding line and text to imphasize Ruassian Federation
     svg5.append("line")
         .attr("x1", 700)
@@ -191,5 +210,13 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
         .attr("fill", "black")
         .style("font-size", 18)
 
-
+    //adding title   
+    // svg5
+    //     .append("text")
+    //     .attr("x", width5 / 4)
+    //     .attr("y", 15)
+    //     .attr("class", "title")
+    //     .style("font-color", "black")
+    //     .style("font-size", "22px")
+    //     .text("Fertility rates in Eastern European countries");
 });
