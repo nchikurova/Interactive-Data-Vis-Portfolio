@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <style>
-    /* body {
-        text-align: center;
-        margin: 60px 100px 75px 100px;
-    } */
-
-    /* p {
-        text-align: left;
-        margin: 100px 60px 75px 60px;
-    } */
-    /* section#charts1 {
-        width: 50%;
-        float: right;
+    header {
+        background-color: #FEEED8;
     }
 
-    section#Proportions {
-        width: 50%;
-        float: left;
-    } */
+    .intro {
+        background-color: #FDFCE6;
+    }
+
+    .history {
+        background-color: rgb(230, 243, 237);
+    }
+
+    .first_births {
+        background-color: rgb(230, 238, 243);
+    }
+
+    .age_group {
+        background-color: rgb(243, 230, 243);
+    }
+
+    body {
+        line-height: 1.8;
+        text-align: left;
+
+        margin: 90px 160px 75px 160px;
+    }
+
+    h3 {
+        font-style: italic;
+        font-weight: 120%;
+    }
+
+    hr {
+        text-align: left;
+        margin: 10px 40px 10px 40px;
+        width: 80%;
+        height: 1px;
+        background-color: black;
+    }
+
+    ul {
+        position: relative;
+
+    }
+
+    .articles {
+        color: black;
+
+    }
 
     div#d3-container7 {
         width: 800px;
@@ -29,18 +60,21 @@
     <meta charset="utf-8">
 
     <!-- this is the title that goes in the browser tab name  -->
-    <title>project_2</title>
+    <title>Where are my grandchildren?</title>
 
-    <!-- custom font: https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+
     <header>
+        <!-- <img src="back2.jpg" class="back" height="240" width="800"> -->
         <img src="pic.png" height="240" width="200" align="left">
-        <h1 style="font-size:200%;font-family:verdana"> Where are my grandchildren? </h1>
-        <h3 style="font-size:120%;font-family:verdana">or why average age of women in Russia at their first birth has
+        <h1 style="font-size:260%"> <strong>Where are my grandchildren? </strong></h1>
+        <h3 style="font-size:160%">or why average age of women in Russia at their first birth has
             changed for the past
             century.</h3>
 
@@ -49,121 +83,223 @@
 
         <div id="tooltip-container"></div>
         <section id="Intro and Rates">
-            <p> The research question question for this article comes from the personal life experience. I was born and
+            <br>
+            <p style="font-size:130%; font-style: italic;">The research question for this article comes
+                from the personal life
+                experience.
+            </p>
+            <p class="intro" style="font-size:130%" style="font-style:italic">
+                I was born and
                 raised in Russia. My mom’s first child was born when she was 24, my aunt had two children by the age of
                 20. Some of my best friends now at the same age as me have 6-years old kids. I will be 30 in few months,
                 and the question “Where are the grandchildren?” had kept coming from my mom during the last few years.
-
             </p>
-            I can see that I am not alone and life styles and life priorities are very different now days comparing to
-            our parents’ life, especially in Russia, considering post-communism period and the result of it life
-            conditions they had to face. So, I decided to take a look at the data of women’s age at their first birth
-            for the past 40 years or so.
+            <p>Life styles and life priorities are very different now days comparing
+                to
+                our parents’ life, especially in Russia, considering post-communism period and the result of it life
+                conditions they had to face. So, I decided to take a look at the data of women’s age at their first
+                birth
+                for the past 40 years or so.
+                <br><br>
+                This article is a short version of my research paper. The purpose of this article is to introduce viewer
+                to the topic and show overall picture form different angels. There are few articles and research papers
+                with similar topic and/or its deeper analysis:
+                <a class="articles" href=https://qz.com/1800961/when-do-people-get-married-around-the-world>
+                    The Ages that People get Married around the World, </a>
+                <a class="articles"
+                    href=https://www.nytimes.com/interactive/2018/08/04/upshot/up-birth-age-gap.html?mtrref=undefined&assetType=REGIWALL>
+                    The Age That Women Have Babies: How a Gap Divides America, </a>
+                <a class="articles"
+                    href=https://blogs.helsinki.fi/rotkirch/files/2009/03/Rotkirch_Kesseli-first-child-in-russia.pdf>
+                    'The first child is the fruit of love' On Russian tradition of early first births.</a>
+            </p>
+        </section>
+        <section id="History">
 
-            <p>
+            <br><br>
+            <hr>
+            <h2>A little history</h2>
+            <div class="history">
                 Russia is one of the many Eastern European countries that experienced fertility decline in the beginning
-                and the middle of the 1990s(1). Among different social, economic and political reasons for each country,
+                and the middle of the 1990s. Among different social, economic and political reasons for each country,
                 for Russia, in particular, the collapse of the USSR was one of the main reasons. The fertility decline
                 had caused changes in the average age of starting families in many Eastern European countries, but
-                somehow did not affect Russia. Even though the average number of children per family decreased from the
+                somehow did not affect Russia:
+                <ul>
+                    <p style="font-weight:bold"> <strong>Average age at marriage in Russia</strong></p>
+                    <li>
+                        <p><strong>1987:</strong> 24.2 - men, 21.4 - women</p>
+                    </li>
+                    <li> 1989: 24.4 - men, 21.8 - women</li>
+                </ul>
+
+                Even though the average number of children per family decreased from the
                 beginning of the 20th century till its end, women continued to give birth to their first child at young
                 ages.
-
-
-                <br>The overall picture of the average age at birth by birth order has started to change after the
+                The overall picture of the average age at birth by birth order has started to change after the
                 2000s.
-            </p>
 
+            </div>
             <div id="d3-container5">
-                <h3>1. Fertility rates</h3>
+                <h3><strong>Total Fertility Rates of some of Central and Eastern European countries</strong></h3>
+            </div>
         </section>
         <br><br>
         <section id="Proportions">
-            <p>
-                Will the tradition of having first child in early ages in Russia remain for another century?<br>Let's
-                take a look at the analysis of the data taken from Census-based Period Fertility tables that show how
-                the proportion of women at birth by birth order has changed with their age from 1979 to 2010 (2).
-            </p>
-            <br><br>
-            <section id="charts1">
-                <h3>1. Proportions of women</h3>
-                <div id="d3-container1"> </div>
-                <div id="d3-container2"> </div>
-            </section>
-            <p>
-                The proportion of women at giving first birth has its peak at 19-20 years old for both years 1979 and
-                1989.
-                Already from 1979 to 1989 we can see the pattern of a third, fourth and fifth births curves slightly
-                moving to the right – to older ages. All of these three curves are spreading through the ages, which
-                means that in 1989 third, fourth and fifth and more births were given at older ages than in 1979.
-            </p>
-            <section id="charts2">
-                <h3>2. Proportions of women</h3>
-                <div id="d3-container3"> </div>
-                <div id="d3-container4"> </div>
-            </section>
-            <p>
-                The pattern of a long high pick for the first birth curve in 1979 and 1989 has changed; the curve of
-                proportion of women giving a first birth is almost leveled up with other curves in 2020.
-                <br>
-                As for the first birth the ages of women would be 18 to 26 years old, instead of a high peak at 18 to 20
-                years old in 1979 and 1989.
-                <br>
-                If the peak of the first birth curve would fall for 20-24 years old in 2002, 2010 shows us a new
-                picture. The peak in 2010 has moved from 22 years old to 26, which gives us a strong pattern of moving
-                the average age at giving a first birth to older ages.
-            </p>
-        </section>
-        <section id="First Births">
-            <p>
-                Let’s now take a look at the curve of first births for all four years (3). By putting together all four
-                curves of first births, we can see the pattern of changing clearer.
-                <br>
-                If in 1979 and 1989 the curves are very similar to each other, 2002 curve has its peak at older age and
-                distributed among older ages. In 2020 more women keep giving births to their first child from 24 years
-                old to 38-40, then in 1979 and 1989. The curve of 2010 continued the tendency of “aging” and its peak
-                has moved to 24 years old and the curve itself covers fewer births at younger ages (18 – 24) and more
-                births at older ages (24 – 38)
-            </p>
-            <div id="d3-container7">
-                <h3>3. First births</h3>
-            </div>
 
-        </section>
-        <br><br>
-        <section id="Age Gorup">
-            <p>
-                At the graph 4 we are looking at four 5-year age groups: 15-19, 20-24, 25-29 and 30-34 years old to
-                compare the number of births given by women at these ages from 1950 to 2010.
-                <br>
-                As we can see the most births were given by women from 20-24 and 25-29 years old age groups.
-                <br>
-                The number of births given by young women at the age of 15 to 19 was almost as high as for 30-34 years
-                old group from 1970 to 2005.
-                After 2005 this number went down, while the number of births given by women at the age from 30 to 34
-                tripled since that time
-            </p>
-            <div id="d3-container6">
-                <h3>4. Number of births by age group</h3>
-            </div>
-        </section>
-        <section id="Conclusion">
-            <p>
-                There are thousands of reasons why Russian women have been having their first child in the early
-                twenties: whether it has been a historically developed tradition that goes centuries beyond or the
-                choice made under the social and family pressure. However, the pattern of getting married and having a
-                first child at younger ages has started to change. Why? The economic situation in Russia has become
-                better since the post-communism period, the middle class now has access to traveling and exploring the
-                world before settling and having a family. Young women nowadays have a stronger mind, they do not get
-                influenced by “old school” traditions anymore, and, maybe make a choice of becoming psychologically and
-                professionally mature before having their first child.
-            </p>
-            <img src="pic4.png" height="370" width="500" align="center">
-        </section>
+            <br><br>
+            <hr>
+            <h2>Will the tradition remain for another
+                century?</h2>
+            <h3> The proportion of women by birth order by age in 1979 - 2010.</h3>
+
+            <!-- charts 1979 and 1989 -->
+            <section id="chart1">
+                <div class="scrolly">
+                    <!-- <h3>1. The proportion of women by birth order by age in 1979 and 1989 </h3> -->
+
+
+                    <div id="d3-container1" style="padding:20px;float:right"> </div>
+                    <div id="d3-container2" style="padding:20px;float:right"> </div>
+                </div>
+
+                <section id="charts2">
+                    <!-- <h3>2. The proportion of women by birth order by age in 2002 and 2010</h3> -->
+
+                    <p>Let's
+                        take a look at the analysis of the data taken from Census-based Period Fertility tables that
+                        show
+                        how
+                        the proportion of women at birth by birth order has changed with their age from 1979 to 2010.
+                        <br><br>
+                        The proportion of women at giving first birth has its peak at 19-20 years old for both
+                        years
+                        1979 and
+                        1989.<br><br>
+                        Already from 1979 to 1989 we can see the pattern of a third, fourth and fifth births curves
+                        slightly
+                        moving to the right – to older ages. All of these three curves are spreading through the
+                        ages,
+                        which
+                        means that in 1989 third, fourth and fifth and more births were given at older ages than in
+                        1979.
+                        <br>
+                    <div id="d3-container3" style="padding:20px;float:right"> </div>
+                    <div id="d3-container4" style="padding:20px;float:right"> </div>
+                    <br><br>The pattern of a long high pick for the first birth curve has changed on third graph;
+                    the
+                    curve of
+                    proportion of women giving a first birth is almost leveled up with other curves in 2002.
+                    <br>
+                    As for the first birth the ages of women would be 18 to 26 years old, instead of a high peak at
+                    18
+                    to 20
+                    years old in 1979 and 1989.
+                    <br><br><br>
+                    If the peak of the first birth curve would fall for 20-24 years old in 2002, 2010 shows us a new
+                    picture. The peak in 2010 has moved from 22 years old to 26, which gives us a strong pattern of
+                    moving
+                    the average age at giving a first birth to older ages.
+
+                </section>
+                <br><br><br>
+                <section id="First Births">
+                    <h3> The proportion of women by age at their first birth (1979 - 2010)</h3>
+                    <div class="first_births">
+
+                        <p>
+                            To have a clear image of women's age at first birth let’s compare together the curves of
+                            first
+                            births for all four years.
+                            <br>
+                            If in 1979 and 1989 the curves are very similar to each other, 2002 curve has its peak at
+                            older
+                            age
+                            and
+                            distributed among older ages. In 2020 more women keep giving births to their first child
+                            from 24
+                            years
+                            old to 38-40, then in 1979 and 1989. The curve of 2010 continued the tendency of “aging” and
+                            its
+                            peak
+                            has moved to 24 years old and the curve itself covers fewer births at younger ages (18 – 24)
+                            and
+                            more
+                            births at older ages (24 – 38)
+                        </p>
+                    </div>
+                    <div id="d3-container7">
+
+                        <label for="dropdown"></label>
+                        <select id="dropdown" name="dropdown" class="dropdown"></select>
+
+                    </div>
+                    <br><br>
+                </section>
+                <br><br>
+                <section id="Age Group">
+                    <hr>
+                    <h2>Looking from a different angle</h2>
+                    <p>
+                    <div class="age_group">
+                        At the next graph we are looking at four 5-year age groups: 15-19, 20-24, 25-29 and 30-34 years
+                        old
+                        to
+                        compare the number of births given by women at these ages from 1950 to 2010.
+                        <br>
+                        As we can see the most births were given by women from 20-24 and 25-29 years old age groups.
+                        <br>
+                        The number of births given by young women at the age of 15 to 19 was almost as high as for 30-34
+                        years
+                        old group from 1970 to 2005.
+                        After 2005 this number went down, while the number of births given by women at the age from 30
+                        to 34
+                        tripled since that time.
+                    </div>
+                    </p>
+                    <div id="d3-container6">
+                        <h3> The number of births by 5-year age group of mother (thousands)</h3>
+                    </div>
+                </section>
+                <section id="Conclusion">
+                    <h2>There will be grandchildren, mom.. just a little later :)</h2>
+                    <p>
+                        There are thousands of reasons why Russian women have been having their first child in the early
+                        twenties: whether it has been a historically developed tradition that goes centuries beyond or
+                        the
+                        choice made under the social and family pressure. However, the pattern of getting married and
+                        having
+                        a
+                        first child at younger ages has started to change. Why? The economic situation in Russia has
+                        become
+                        better since the post-communism period, the middle class now has access to traveling and
+                        exploring
+                        the
+                        world before settling and having a family. Young women nowadays have a stronger mind, they do
+                        not
+                        get
+                        influenced by “old school” traditions anymore, and, maybe make a choice of becoming
+                        psychologically
+                        and
+                        professionally mature before having their first child.
+                    </p>
+                    <img src="pic5.png" height="340" width="600" align="center">
+                </section>
 
     </main>
+    <div class='datasource' style="font-size:10px; padding:10px;float:right">Data sources
+        <li><a class="datasource" href=https://www.humanfertility.org/cgi-bin/main.php>
+                Humanfertility.org</a></li>
+        <li><a class="datasource" href=https://www.un.org/en/development/desa/population/index.asp>
+                Population.un.org</a></li>
+        <li><a class="datasource" href=https://datacatalog.worldbank.org/dataset/population-estimates-and-projections>
+                World Bank. Data catalog</a></li>
+        <li><a class="datasource" href=https://www.gettyimages.com>
+                Images: gettyimages</a></li>
+    </div>
     <!-- this is the line that loads in d3 -->
     <script src="../../lib/d3.js"></script>
+    <script src="https://unpkg.com/enter-view"></script>
     <!-- this is the line that loads in the main js script -->
     <script src="1979.js"></script>
     <script src="1989.js"></script>

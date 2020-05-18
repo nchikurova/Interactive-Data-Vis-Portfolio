@@ -8,22 +8,45 @@ body {
   
   .dot {
     cursor: pointer;
+    fill: rgb(51, 87, 187);
   }
   
   .dot:hover {
-    fill:  #8d2f03;
+    fill:  #03115e;
   }
   
   .axis-label {
     font-size: 16px;
     fill: black;
     text-anchor: middle;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
   .trend {
     fill: none;
-    stroke: black;
+    stroke: rgb(50, 117, 194);
     stroke-width:2;
     stroke-linejoin: round;
   }
+  .dropdown{
+    background-color: rgb(210, 229, 247);
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  width: 120px;
+  }
+  .tooltip {	
+    position: absolute;			
+    text-align: left;			
+    padding: 8px;			
+    font: 12px;		
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: black;	
+    background: white;
+    pointer-events: none;			
+}  
  

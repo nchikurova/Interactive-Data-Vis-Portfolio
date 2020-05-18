@@ -33,7 +33,7 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
     /** CONSTANTS */
     // constants help us reference the same values throughout our code
 
-    const width5 = 800,
+    var width5 = 800,
         height5 = 250,
         margin5 = { top: 5, bottom: 40, left: 40, right: 0 };
     axisTicksX = { qty: 10 };
@@ -124,7 +124,7 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
         .attr("class", ids)
         .attr("stroke", d => {
             if (d.id === "Russian Federation") return "black";
-            else return "#9EA19D"
+            else return "#2BA09A"
         })
         .attr("fill", " none")
         .attr("stroke-width", d => {

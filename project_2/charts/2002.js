@@ -151,3 +151,4 @@ d3.csv("../data_project2/2002.csv", d3.autoType).then(data => {
 
 
 });
+

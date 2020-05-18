@@ -32,7 +32,7 @@ d3.csv("../data_project2/2010.csv", d3.autoType).then(data => {
 
     const width4 = 400,
         height4 = 250,
-        margin4 = { top: 30, bottom: 40, left: 40, right: 5 };
+        margin4 = { top: 30, bottom: 40, left: 60, right: 5 };
     axisTicksX = { qty: 20 };
     axisTicksY = { qty: 9 };
     /** SCALES */
@@ -114,6 +114,12 @@ d3.csv("../data_project2/2010.csv", d3.autoType).then(data => {
         .attr("class", "axis y-axis")
         .attr("transform", `translate(${margin4.left},0)`)
         .call(yAxis4)
+        .append("text")
+        .attr("class", "axis-label")
+        .attr("y", "50%")
+        .attr("dx", "-4.5em")
+        .attr("writing-mode", "vertical-rl")
+        .text("Proportions of women by birth in %");
 
     //adding title   
     svg4

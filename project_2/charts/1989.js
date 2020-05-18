@@ -32,7 +32,7 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
 
     const width2 = 400,
         height2 = 250,
-        margin2 = { top: 30, bottom: 40, left: 40, right: 5 };
+        margin2 = { top: 30, bottom: 40, left: 60, right: 5 };
     axisTicksX = { qty: 20 };
     axisTicksY = { qty: 9 };
     /** SCALES */
@@ -112,6 +112,12 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
         .attr("class", "axis y-axis")
         .attr("transform", `translate(${margin2.left},0)`)
         .call(yAxis2)
+        .append("text")
+        .attr("class", "axis-label")
+        .attr("y", "50%")
+        .attr("dx", "-4.5em")
+        .attr("writing-mode", "vertical-rl")
+        .text("Proportions of women by birth in %");
 
     //adding title   
     svg2
@@ -139,35 +145,38 @@ d3.csv("../data_project2/1989.csv", d3.autoType).then(data => {
             .tickSize(- width2)
             .tickFormat("")
         )
-    // append legends using example https://www.d3-graph-gallery.com/graph/custom_legend.html
-    keys = ["1st births", "2nd births", "3rd births", "4th births", "5th + births"]
-    // if our columns were named as above, for keys we could use data.columns.slice(1)
-    const color = d3.scaleOrdinal().domain(["1st births", "2nd births", "3rd births", "4th births", "5th + births"]).range(["#1280C2", "#F19322", " #44A62C", "#EDD151", "#77D9DF"])
 
-    // Add one dot in the legend for each name.
-    svg2.selectAll("myrect")
-        .data(keys)
-        .enter()
-        .append("rect")
-        .attr("width", 12)
-        .attr("height", 12)
-        .attr("x", 308)
-        .attr("y", function (d, i) { return 5 + i * 20 }) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", function (d) { return color(d) })
-    //.style("stroke", "black")
-    //.style("stroke-width", 0.5)
+    // I moved legends to 1979 line chart
+    // // append legends using example https://www.d3-graph-gallery.com/graph/custom_legend.html
+    // keys = ["1st births", "2nd births", "3rd births", "4th births", "5th + births"]
+    // // if our columns were named as above, for keys we could use data.columns.slice(1)
+    // const color = d3.scaleOrdinal().domain(["1st births", "2nd births", "3rd births", "4th births", "5th + births"]).range(["#1280C2", "#F19322", " #44A62C", "#EDD151", "#77D9DF"])
 
-    // Add one dot in the legend for each name.
-    svg2.selectAll("mylabels")
-        .data(keys)
-        .enter()
-        .append("text")
-        .attr("x", 325)
-        .attr("y", function (d, i) { return 12 + i * 20 }) // 10 is where the first dot appears. 25 is the distance between dots
-        //.style("fill", function (d) { return color(d) }) // if you want text the same color as circles
-        .style("fill", "black")
-        .text(function (d) { return d })
-        .attr("text-anchor", "left")
-        .style("alignment-baseline", "middle")
+    // // Add one dot in the legend for each name.
+    // svg2.selectAll("myrect")
+    //     .data(keys)
+    //     .enter()
+    //     .append("rect")
+    //     .attr("width", 12)
+    //     .attr("height", 12)
+    //     .attr("x", 308)
+    //     .attr("y", function (d, i) { return 5 + i * 20 }) // 100 is where the first dot appears. 25 is the distance between dots
+    //     .style("fill", function (d) { return color(d) })
+    // //.style("stroke", "black")
+    // //.style("stroke-width", 0.5)
+
+    // // Add one dot in the legend for each name.
+    // svg2.selectAll("mylabels")
+    //     .data(keys)
+    //     .enter()
+    //     .append("text")
+    //     .style("font-size", 14)
+    //     .attr("x", 325)
+    //     .attr("y", function (d, i) { return 12 + i * 20 }) // 10 is where the first dot appears. 25 is the distance between dots
+    //     //.style("fill", function (d) { return color(d) }) // if you want text the same color as circles
+    //     .style("fill", "black")
+    //     .text(function (d) { return d })
+    //     .attr("text-anchor", "left")
+    //     .style("alignment-baseline", "middle")
 
 });
