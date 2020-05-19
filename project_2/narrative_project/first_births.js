@@ -24,7 +24,7 @@ let state = {
 /**
  * LOAD DATA
  * */
-d3.csv("../data_project2/first_b.csv", d => ({
+d3.csv("../data_project2/first_births.csv", d => ({
     age: d.Age,
     year: d.Year,
     first_births: +d.First_births,

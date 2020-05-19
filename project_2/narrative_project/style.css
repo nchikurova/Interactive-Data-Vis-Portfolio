@@ -50,8 +50,8 @@ header {
     /* position:absolute;
     top:3660px;
     left:160px; */
-    width:840px; 
-    height: 360px;
+    width: 800px;
+    height: 500px;
     }
   /* LINE CHARTS*/
 path.line-0 {
@@ -118,22 +118,21 @@ path.line-4 {
 }
 .ids:hover {
     stroke-width: 3px;
-    }
-    .dot {
-        cursor: pointer;
-        fill: rgb(51, 87, 187);
-      }
+}
+.dot {
+    cursor: pointer;
+    fill: rgb(51, 87, 187);
+}
       
-      .dot:hover {
-        fill:  #03115e;
-      }
+.dot:hover {
+    fill:  #03115e;
+}
       
-      .axis-label {
-        font-size: 12px;
-        fill: black;
-        text-anchor: middle;
-        /* font-weight: bold; */
-      }
+.axis-label {
+    font-size: 12px;
+    fill: black;
+    text-anchor: middle;
+}
       .trend {
         fill: none;
         stroke: rgb(50, 117, 194);
@@ -141,7 +140,7 @@ path.line-4 {
         stroke-linejoin: round;
       }
       .dropdown{
-        background-color: rgb(210, 229, 247);
+     background-color: rgb(210, 229, 247);
       color: black;
       padding: 16px;
       font-size: 16px;
@@ -152,7 +151,6 @@ path.line-4 {
       }
       .datasource {
         color: black;
-        font-weight: 12px;
     }
      
 
