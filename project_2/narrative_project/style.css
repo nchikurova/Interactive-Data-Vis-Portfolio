@@ -1,9 +1,5 @@
-/* style, background color -- main container */   
 
 body {
-    line-height: 1.8;
-    text-align: left;
-    margin: 60px 140px 75px 140px;
     font-family: 'PT Serif', serif;
     font-size: 18px;   
     fill: black;
@@ -12,44 +8,6 @@ body {
 header {
     font-family: 'PT Serif', serif;
     width: width;
-    background-color: #FEEED8;
-}
-
-.intro {
-    background-color: #FDFCE6;
-}
-.history {
-    background-color: rgb(230, 243, 237);
-}
-.first_births {
-    background-color: rgb(230, 238, 243);
-}
-.age_group {
-    background-color: rgb(243, 230, 243);
-}
-.conclusion {
-    background-color: #FDF4F3;
-}
-
-h3 {
-    font-style: italic;
-    font-weight: 120%;
-}
-
-hr {
-    text-align: left;
-    margin: 10px 40px 10px 40px;
-    width: 80%;
-    height: 1px;
-    background-color: black;
-}
-
-ul {
-    position: relative;
-}
-
-.articles {
-    color: black;
 }
 
  /* containers with charts */   
