@@ -112,7 +112,7 @@ function init() {
         .attr("class", "tooltip")
         .style("opacity", 0)
     draw(); // calls the draw function
-}
+};
 
 /**
  * DRAW FUNCTION
@@ -133,7 +133,7 @@ function draw() {
 
     const dot = svg7
         .selectAll(".dot")
-        .data(filteredData, d => d.age) // use `d.year` as the `key` to match between HTML and data elements
+        .data(filteredData, d => d.age) // use `d.age` as the `key` to match between HTML and data elements
         .join(
             enter =>
                 // enter selections -- all data elements that don't have a `.dot` element attached to them yet
@@ -141,7 +141,7 @@ function draw() {
                     .append("circle")
                     .attr("class", "dot") // Note: this is important so we can identify it in future updates
                     .attr("r", radius)
-                    .attr("cy", height7 - margin7.bottom) // initial value - to be transitioned
+                    .attr("cy", height7 - margin7.bottom)
                     .attr("cx", d => xScale7(d.age))
                     .on("mouseover", function (d) {
                         div.transition()
@@ -167,7 +167,8 @@ function draw() {
                         .attr("cy", height7 - margin7.bottom)
                         .remove()
                 )
-        ).call(
+        )
+        .call(
             selection =>
                 selection
                     .transition() // initialize transition
