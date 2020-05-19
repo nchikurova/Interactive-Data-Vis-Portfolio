@@ -94,9 +94,9 @@ path.line-4 {
 }
 .tooltip {	
     position: absolute;			
-    text-align: left;			
-    padding: 3px;			
-    font: 12px;		
+    /* text-align: left;*/
+    padding: 3px;
+    font-size: 14px;		
     border-style: solid;
     border-width: thin;
     border-color: black;

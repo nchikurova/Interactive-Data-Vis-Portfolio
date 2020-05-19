@@ -147,7 +147,7 @@ function draw() {
                         div.transition()
                             .duration(200)
                             .style("opacity", 1)
-                        div.html("The proportion of women at first birth in " + "<p style=' '><strong>" + d.year + "</strong></p>" + " at " + "<p style=' '><strong>" + d.age + "</strong></p>" + " years old" + " was " + "<p style=' '><strong>" + d.first_births + "</strong></p>")
+                        div.html("The proportion of women at first birth " + "<br>" + "in " + "<strong>" + d.year + "</strong>" + " at the age of " + "<strong>" + d.age + "</strong>" + "<br>" + " was " + "<strong>" + d.first_births + "</strong>")
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
                     })
