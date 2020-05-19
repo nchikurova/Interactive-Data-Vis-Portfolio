@@ -1,7 +1,7 @@
 /**
  * CONSTANTS AND GLOBALS
  * */
-const width7 = 800,
+const width7 = 700,
     height7 = 500,
     margin7 = { top: 30, bottom: 60, left: 60, right: 40 },
     radius = 4,

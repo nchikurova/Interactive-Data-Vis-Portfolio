@@ -16,24 +16,10 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
         };
     });
 
-    // console.log("Column headers", data.columns);
-    // console.log("Column headers without year", data.columns.slice(1));
-    // // returns the sliced dataset
-    // console.log("slices5", slices5);
-    // // returns the first slice
-    // console.log("First slice", slices5[0]);
-    // // returns the array in the first slice
-    // console.log("A array", slices5[0].values);
-    // // returns the date of the first row in the first slice
-    // console.log("Year element", slices5[0].values[0].Year);
-    // // returns the array's length
-    // console.log("Array length", (slices5[0].values).length);
-    // console.log(data);
-
     /** CONSTANTS */
     // constants help us reference the same values throughout our code
 
-    var width5 = 800,
+    var width5 = 760,
         height5 = 250,
         margin5 = { top: 5, bottom: 40, left: 40, right: 0 };
     axisTicksX = { qty: 10 };
@@ -196,15 +182,15 @@ d3.csv("../data_project2/All_fert_rates.csv", d3.autoType).then(data => {
 
     // Adding line and text to imphasize Ruassian Federation
     svg5.append("line")
-        .attr("x1", 700)
-        .attr("y1", 70)
-        .attr("x2", 735)
-        .attr("y2", 95)
+        .attr("x1", 675)
+        .attr("y1", 68)
+        .attr("x2", 730)
+        .attr("y2", 90)
         .attr("stroke", "black")
         .style("stroke-width", 2)
 
     svg5.append("text")
-        .attr("x", 615)
+        .attr("x", 515)
         .attr("y", 65)
         .text("Russian Federation")
         .attr("fill", "black")

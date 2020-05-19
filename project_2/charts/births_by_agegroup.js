@@ -10,7 +10,7 @@ d3.csv("../data_project2/birth_by_age_group.csv", d3.autoType).then(data => {
     /** CONSTANTS */
     // constants help us reference the same values throughout our code
     const margin6 = { top: 20, bottom: 100, left: 60, right: 60 },
-        width6 = 840,
+        width6 = 780,
         height6 = 500
 
     const subgroups = data.columns.slice(1)
