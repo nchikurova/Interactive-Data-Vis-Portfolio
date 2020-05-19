@@ -1,109 +1,143 @@
+/* style, background color -- main container */   
+
 body {
-    /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
-    /* font-family: "Source Sans Pro", 'Arial Narrow Bold'; */
-   /* font-family: 'Montserrat', sans-serif;  */
-   font-family: 'PT Serif', serif;
+    line-height: 1.8;
+    text-align: left;
+    margin: 60px 140px 75px 140px;
+    font-family: 'PT Serif', serif;
     font-size: 18px;   
     fill: black;
     padding: 1em 3em;
-    }
+}
 header {
     font-family: 'PT Serif', serif;
     width: width;
+    background-color: #FEEED8;
 }
- /* containers charts */   
+
+.intro {
+    background-color: #FDFCE6;
+}
+.history {
+    background-color: rgb(230, 243, 237);
+}
+.first_births {
+    background-color: rgb(230, 238, 243);
+}
+.age_group {
+    background-color: rgb(243, 230, 243);
+}
+.conclusion {
+    background-color: #FDF4F3;
+}
+
+h3 {
+    font-style: italic;
+    font-weight: 120%;
+}
+
+hr {
+    text-align: left;
+    margin: 10px 40px 10px 40px;
+    width: 80%;
+    height: 1px;
+    background-color: black;
+}
+
+ul {
+    position: relative;
+}
+
+.articles {
+    color: black;
+}
+
+ /* containers with charts */   
  #d3-container1{ 
-     position: float;  
+    position: float;  
     width:500px; 
     height: 250px; 
-    }
+}
  #d3-container2{ 
     position: float;
     width:500px; 
     height: 250px; 
-    }
+}
  #d3-container3 {  
     position: float;
     width:500px; 
     height: 250px;
-    }
+}
  #d3-container4 {  
     position: float;
     width:500px; 
     height: 250px; 
-    }
+}
 #d3-container5 {   
     position: float;
     width:600px; 
     height: 250px;
-    }
+}
 #d3-container6 {  
     position: float;    
-    /* position:absolute;
-    top:4600px;
-    left:140px; */
     width:940px; 
     height: 580px;
-    }
+}
 #d3-container7 {   
     position: float;   
-    /* position:absolute;
-    top:3660px;
-    left:160px; */
     width: 800px;
     height: 500px;
-    }
+}
   /* LINE CHARTS*/
 path.line-0 {
     fill: rgb(202, 227, 241);
     stroke:#1280C2 ;
     stroke-width: 2px;
-    }    
+}    
 path.line-1 {
     fill: none;
     stroke:#F19322;
     stroke-width: 2px;
-    }
+}
 path.line-2 {
     fill: none;
     stroke: #44A62C;
     stroke-width: 2px;
-    }
+}
 path.line-3 {
     fill: none;
     stroke:#EDD151;
     stroke-width: 2px;
-     }
+}
 path.line-4 {
     fill: none;
     stroke:#77D9DF;
     stroke-width: 2px;
-    }  
- 
+}  
 .grid line {
-        stroke: rgb(168, 165, 165);
-        stroke-opacity: 0.7;
-        shape-rendering: crispEdges;
-      } 
+    stroke: rgb(168, 165, 165);
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+} 
 .grid path {
-        stroke-width: 0;
-      }    
+    stroke-width: 0;
+}    
 .axis-label {
     font-size: 12px;
     fill: black;
     text-anchor: middle;
-  }
+}
 .title{
     font-size: 14px;
     stroke: black;
     opacity: 1;
     height: 30px;
     width: 40px;
-  }
+}
 .tooltip {	
     position: absolute;			
     text-align: left;			
-    padding: 8px;			
+    padding: 3px;			
     font: 12px;		
     border-style: solid;
     border-width: thin;
@@ -123,34 +157,26 @@ path.line-4 {
     cursor: pointer;
     fill: rgb(51, 87, 187);
 }
-      
 .dot:hover {
     fill:  #03115e;
+}   
+.trend {
+    fill: none;
+    stroke: rgb(50, 117, 194);
+    stroke-width:2;
+    stroke-linejoin: round;
 }
-      
-.axis-label {
-    font-size: 12px;
-    fill: black;
-    text-anchor: middle;
+.dropdown {
+    background-color: rgb(210, 229, 247);
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 120px;
 }
-      .trend {
-        fill: none;
-        stroke: rgb(50, 117, 194);
-        stroke-width:2;
-        stroke-linejoin: round;
-      }
-      .dropdown{
-     background-color: rgb(210, 229, 247);
-      color: black;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      height: 40px;
-      width: 120px;
-      }
-      .datasource {
-        color: black;
-    }
+.datasource {
+    color: black;
+}
      
-
