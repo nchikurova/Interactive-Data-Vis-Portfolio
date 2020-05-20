@@ -107,10 +107,10 @@ function init() {
         .attr("y", "50%")
         .attr("dx", "-3em")
         .attr("writing-mode", "vertical-rl")
-        .text("Proportion");
+        .text("Proportion of women by age at their first birth");
     div = d3.select("body").append("div")
         .attr("class", "tooltip")
-        .style("opacity", 0)
+        .style("opacity", 0);
     draw(); // calls the draw function
 };
 

@@ -7,17 +7,17 @@
 	left:520px;
 	width:900px;
   height:300px; 
-  font-size: 18px; 
+  font-size: 20px; 
 }
-
-#text1 {
+/* If <h2> for containers were separate div elements*/
+/* #text1 {
   position: absolute;
   top: 420px;
   left: 30px;
   height: 12px;
   font-size: 18px;
   font-weight: bold;
-}
+} 
 
 #text2 {
     position: absolute;
@@ -26,7 +26,7 @@
     height: 12px;
     font-weight: bold;
     font-size: 18px;
-}
+} */
 
 #text3 {
   position: absolute;

@@ -24,7 +24,7 @@ d3.json("../data/custom.geo.json", d3.autoType).
             .attr("class", "tooltip")
             .style("opacity", 0);
 
-        svg.selectAll(".country1")
+        svg.selectAll(".country")
             .data(geojson.features)
             .join("path")
             .attr("d", path1)

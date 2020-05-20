@@ -2,7 +2,7 @@
 
 var marginScatter = { top: 20, bottom: 60, left: 60, right: 40 },
     widthScatter = 600 - marginScatter.left - marginScatter.right,
-    heightScatter = 360 - marginScatter.top - marginScatter.bottom,
+    heightScatter = 340 - marginScatter.top - marginScatter.bottom,
     radius_scatter = 3;
 const default_selection = null;
 const axisTicks = { qty: 5 };
@@ -218,7 +218,7 @@ function draw_scatter() {
     //**************** IF I WANT TO MAKE MY DOTS LINE: ADD LINEFUNC(1) AND CONST LINE(1)
     // const line = svgScatter
     //     .selectAll("path.trend")
-    //     .data(d3.groups(filteredData, d => d.Country))
+    //     .data(d3.groups(filteredData, d => d.Country)) //add library to html  <script src="https://d3js.org/d3-array.v2.min.js"></script> 
     //     .join(
     //         enter =>
     //             enter
