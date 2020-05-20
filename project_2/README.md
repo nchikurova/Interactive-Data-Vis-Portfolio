@@ -53,5 +53,6 @@ Adding cartoon images was the initial idea in order to make this article more pl
 - replace the dropdown menu in Firts Births chart with checkboxes (so user can not only see them separately but compare few of them by the same time, for example 1979 and 2010)
 - expand this project to Worldwide view
 - debug "Uncaught (in promise) TypeError: svg7.selectAll(...).data(...).join(...).call is not a function" in Fisrt Births chart. I tried minimum 10 ways from manipulating with data and assigning state data to changing .join() function to .enter().append(). Unfortunately nothing worked.
-- spend more time for deeper understanding functions and events in JavaScript, which I will do over the summer :)
 - look for more articles and research papers to present it to the viewer
+- add ClosestDate and bisect functions to all charts
+- spend more time for deeper understanding functions and events in JavaScript, which I will do over the summer :)
