@@ -55,7 +55,7 @@ The text with "Other affected country" initially was made by separate HTML eleme
 
 The thought of "how much I don't know and what I can't do yet" I am trying to turn into "wow, that is exciting how much room for an improvement I have" :) . Even though it doesn't work sometimes, I can clearly see how I have developed my skills since the first day of this class. As smart people say: "Don't try to be better than the others, try to be better than yourself yesterday".
 
-I have spent hours on this code and considering that I did not know any single line of Javascript and d3, I think it is pretty impressive. However, I do think it could be better. It is either because of the lack of skills, time, or energy, this project is not perfect. 
+I have spent hours on both projects and considering that I did not know any single line of Javascript and d3, or HTML I think it is pretty impressive. However, I do think it could be better. It is either because of the lack of skills, time, or energy, this project is not perfect. 
 
 ## To make this project perfect I would:
 
