@@ -1,4 +1,7 @@
 # Project 1. Exploratory Visualization
+
+To see the project click [here](https://nchikurova.github.io/Interactive-Data-Vis-Portfolio/exploratory_project/).
+
 ## 1. Prospectus
 
 In connection with the current situation of COVID - 19 (Coronavirus) in the world, I decided to look back and see what other epidemic diseases had threatened human race for the past years. One of the most dangerous and rapidly spread viruses was Ebola in 2013 - 2016 years. The data I will use for my project was found in [Kaggle.com](https://www.kaggle.com). 
@@ -15,9 +18,12 @@ I am planning to find more datasets that will describe how the governments and p
 [Collection methodology](https://github.com/imdevskp/ebola_outbreak_dataset)
 
 ## 2. Sketches and Mockups
-Brainstorming + Sketches
 
-The first scetch that comes to my mind is scatter plot with timeline (date) and confirmed/possible cases as y-axis with transition of growing numbers through the time.
+[Structural Architecture](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/arch_diagram_project1.png)
+
+Sketches: [map and scatter plot](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7447.jpeg),[bar charts](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7448.jpeg)
+
+The first sketch that comes to my mind is scatter plot with timeline (date) and confirmed/possible cases as y-axis with transition of growing numbers through the time.
 
 Also I want to make a map which shows the countries that got affected during the virus. Is it possible to make a map without longitute and lattitude? Can I find one or two pair of coordinates and use them for showing the whole conutry?
 
