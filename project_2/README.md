@@ -8,24 +8,23 @@ To view screenshot of a project click [here](https://github.com/nchikurova/Inter
 
 ## 1. Prospectus
 
-Originally being born and raised in Russia, I notice some traditions change over time. And, after another question from my mom: "Where are my grandchildren?", I decided to take a look at the Russian fertility data over time. Analysing fertility tables and the age of women at birth from 1970 to 2020, as expected, I found out I was right. I am not the one in my late 20s, who does not have kids yet. the average age of women at first birth in Russia started decreasing after the 2000s despite the traditions. There are many reasons for that change, and I am going to talk about it in my article.
+Born and raised in Russia, I notice that some traditions has been changing over time. And, after another question from my mom: "Where are my grandchildren?", I decided to take a look at the Russian fertility data over time. Analysing fertility tables and the age of women at birth from 1970 to 2020, I found out that the average age of women in Russian at their first birth had increased. I am not the one in my late 20s, who does not have kids yet. The average age of women at first birth in Russia started increasing after the 2000s despite the traditions.
 
 ## 2. Sketches and Mockups
 
-[Structural Architecture](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/arch_diagram_project1.png)
-
-Initial sketches: [map and scatter plot](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7447.jpeg),[ bar charts](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7448.jpeg)
-
+[Structural Architecture](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/project_2/sketches/sketch_project2.png)
 
 ## 3. Exploring data and Data sources:
 
+This article is a short version of my research paper, where I took the data from the sources listed below and made analysis myself by comparing, exploring and combining the data of Russian population over time, Fertility tables and Cohort tables, and Total Fertility Rates tables.
 
+I decided to include the line chart of Total Fertility Rates of some Eastern European countries to show overall picture of fertility decline in late 1990s; line chart of proportions of women by birth order (1979, 1989, 2002, and 2010 were the years with the most updated information and the least missing values); and the bar graph of the numbers of birth by 5-year age group of mother. 
 
 [Humanfertility.org](https://www.humanfertility.org/cgi-bin/country.php?country=RUS&tab=si)
 
 [Population.un.org](https://www.un.org/en/development/desa/population/index.asp)
 
-[World Bank, 2019. Data catalog. World Development Indicators (Russian Federation](https://datacatalog.worldbank.org/dataset/population-estimates-and-projections)
+[World Bank, 2019. Data catalog. World Development Indicators (Russian Federation)](https://datacatalog.worldbank.org/dataset/population-estimates-and-projections)
 
 
 ## 4. Reflection and Iteration
