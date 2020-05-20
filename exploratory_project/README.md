@@ -25,7 +25,7 @@ I am planning to find more datasets that will describe how the governments and p
 
 [Structural Architecture](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/arch_diagram_project1.png)
 
-Sketches: [map and scatter plot](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7447.jpeg),[bar charts](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7448.jpeg)
+Initial sketches: [map and scatter plot](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7447.jpeg),[ bar charts](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7448.jpeg)
 
 The first sketch that comes to my mind is scatter plot with timeline (date) and confirmed/possible cases as y-axis with transition of growing numbers through the time.
 
