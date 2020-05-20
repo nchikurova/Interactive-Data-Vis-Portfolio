@@ -1,8 +1,10 @@
 # Project 1. Exploratory Visualization
 
 To explore the project click [here](https://nchikurova.github.io/Interactive-Data-Vis-Portfolio/exploratory_project/).
-To view short screen recording click [here](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/project_1.mov)
-To view screen shot of a project click [here](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/project_1_pic.png)
+
+To view short screen recording click [here](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/project_1.mov).
+
+To view screen shot of a project click [here](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/project_1_pic.png).
 
 ## 1. Prospectus
 
