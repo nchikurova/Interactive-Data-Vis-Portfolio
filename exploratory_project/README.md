@@ -8,7 +8,7 @@ To view screen shot of a project click [here](https://github.com/nchikurova/Inte
 
 ## 1. Prospectus
 
-*This project was made in the Spring of 2020.
+*This project was made in the Spring of 2020[italic].
 
 In connection with the current situation of COVID - 19 (Coronavirus) in the world, I decided to look back and see what other epidemic diseases had threatened human race for the past years. One of the most dangerous and rapidly spread viruses was Ebola in 2013 - 2016 years. The data I will use for my project was found in [Kaggle.com](https://www.kaggle.com). 
 
