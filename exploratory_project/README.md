@@ -27,14 +27,38 @@ I am planning to find more datasets that will describe how the governments and p
 
 Initial sketches: [map and scatter plot](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7447.jpeg),[ bar charts](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/blob/master/lib/sketches/IMG_7448.jpeg)
 
-The first sketch that comes to my mind is scatter plot with timeline (date) and confirmed/possible cases as y-axis with transition of growing numbers through the time.
+## 3. Exploring data
 
-Also I want to make a map which shows the countries that got affected during the virus. Is it possible to make a map without longitute and lattitude? Can I find one or two pair of coordinates and use them for showing the whole conutry?
+The data includes name of the country, the date of report, the number of suspected, probabale and confirmed and its total of death cases, the number of suspected, probabale and confirmed and its total of deaths. Initially I wanted to find correlation between suspected and confirmed cases, what was the proportion of suspected and probable cases out of confirmed. By taking closer look of the data, I realized that logic of adding up cases each day was followed only in "Total" column, and vizualizations and analysis of suspected and probable cases and deaths did not come as expected. Also, I decided to analyze and visualize this data to learn more about Ebola outbreak. As I have heard, virus was spread around the world. However, exploring data I found out that number of cases and deaths in most of the countries were significally small comparing to Liberia, Guinea and Sierra Leone. 
+Since the data I found had longitute and latitude of each country, map was the first data visualization that came to my mind. Because the numbers of three selected above countries were thousands times higher than the others, the world map had to be changed to Africa map. I think it is very important to show people where these countries are located at least in order to teach them a little of geography.
 
-## 3. Architectural Schema
-Structural Architecture
+## 4. Reflection and Iteration
 
-## 4. Final Dataset
-Data Analysis + Prep
+I had three visualizations in my mind: bar chart that will show the difference between the numbers of total cases and total deaths, scatter plot that will explain how fast these numbers were growing through time and map where the viewer can see these countries location. 
 
+I think grey background was the best option in terms of the color. I did not want to leave it white and it would not be appropriate to use bright color such as yellow for example. This topic contains death numbers and I thought that using dark red ("brown" for html colors) would consciously and subconsciously this association in viewer mind. Visually I did not want to use a lot of colors, since it is serious topic, but wanted to make it pleasable. So, I decided to use dark grey for number of total cases and leave black color for text.
 
+Iniatilly circles were showed on the map where the center of circles would represent the centers of epidemic and radius - how widely this epidemic spread. Since Liberia, Guinea and Sierra Leone are relatively small and are located next to each other, I was advised by classmates and teacher to place circles separate from the map. When I tried to do that, I liked the result and left it the suggested way. Also, I made the map "almost invisible" by placing it under the text and table and give the borders white color. Most of the counties are not filled with color except Liberia, Guinea, Sierra Leone, Nigeria and Mali where the country with lower numbers has lighter grey fill and the country with higher numbers - darker, respectively.
+
+The text with "Other affected country" initially was made by separate html elements and the numbers would not aligh with each other. At that point I did not even think about table, and when I finally walked out from this project for few days, when I came back I made a small table as separated JavaScript file and placed it on the top of map. It does look a lot better and pves one more time how important is to sometimes leave yor project for while and come back to each with "fresh eye".
+
+## 5. Improvement and goals for future
+
+“The more you know, the more you know you don't know.”
+
+― Aristotle
+
+The thought of "how much I don't know and what I can't do yet" I am trying to turn into "wow, that is exciting how much room for improvement I have" :) . Even though it doesn't work sometimes, I can clearly see how I have developed my skills since the first day of this class. As smart people say: "Don't try to be better than others, try to be better than yourself yesterday".
+
+I have spent hours on this code and considering that I did not know any single line of Javascript and d3, I think it is pretty impressive. Hovewer, I do think it could be better. It is either bacause of the lack of skills, time or energy, this project is not perfect. 
+
+## If I could I would:
+
+- make all elements interactive and connected to dropdown menu
+- replace dropdown menu with either radio buttons or checkboxes (since it is only three counties)
+- make map more interactive by adding hover over surface, and fixing the bug in hover over borders
+- brainstorm and add the idea for displaying proportions and percentage of affected people comparing to the population in each country
+- change scatter plot to line chart where I could display tooltip by using ClosestDate and bisect function
+- debug Guinea circle tooltip (the tooltip are not showing maybe because the radius is too small and all circles are on a top of each other)
+- replace separate html div containers that represent lines connected circles and countries on a map by adding them to code ( so each line will show up only when the country is chosen)
+- brainstorm and improve the idea of showing "2015 <--- 2014 ---> 2015" html element for representing the growth of numbers over time
