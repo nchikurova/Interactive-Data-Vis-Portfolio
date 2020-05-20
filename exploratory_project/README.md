@@ -8,6 +8,8 @@ To view screen shot of a project click [here](https://github.com/nchikurova/Inte
 
 ## 1. Prospectus
 
+*This project was made in the Spring of 2020.
+
 In connection with the current situation of COVID - 19 (Coronavirus) in the world, I decided to look back and see what other epidemic diseases had threatened human race for the past years. One of the most dangerous and rapidly spread viruses was Ebola in 2013 - 2016 years. The data I will use for my project was found in [Kaggle.com](https://www.kaggle.com). 
 
 With a final number of 28,616 infected people, including 11,310 deaths (case-fatality rate of 40%), The Western African Ebola virus epidemic (2013 – 2016) was the most widespread outbreak of Ebola virus disease (EVD) in history—causing major loss of life and socioeconomic disruption in the region, mainly in Guinea, Liberia, and Sierra Leone. *[Ebola Outbreak Dataset](https://www.kaggle.com/imdevskp/ebola-outbreak-20142016-complete-dataset)
@@ -51,7 +53,7 @@ The text with "Other affected country" initially was made by separate html eleme
 
 The thought of "how much I don't know and what I can't do yet" I am trying to turn into "wow, that is exciting how much room for improvement I have" :) . Even though it doesn't work sometimes, I can clearly see how I have developed my skills since the first day of this class. As smart people say: "Don't try to be better than others, try to be better than yourself yesterday".
 
-I have spent hours on this code and considering that I did not know any single line of Javascript and d3, I think it is pretty impressive. Hovewer, I do think it could be better. It is either bacause of the lack of skills, time or energy, this project is not perfect. 
+I have spent hours on this code and considering that I did not know any single line of Javascript and d3, I think it is pretty impressive. Hovewer, I do think it could be better. It is either because of the lack of skills, time or energy, this project is not perfect. 
 
 ## If I could I would:
 
