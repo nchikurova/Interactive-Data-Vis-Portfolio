@@ -7,8 +7,6 @@ This portfolio was made for Interactive Data Analysis class in CUNY Graduate Cen
 
 # [Project 1. Exploratory Visualization](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/tree/master/exploratory_project)
 
-project_1_pic.png 
-
 # [Project 2. Narrative Visualization](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/tree/master/project_2)
 
 ### [Restaurants in NYC by Google rating and number of reviews](https://nchikurova.github.io/Interactive-Data-Vis-Sp2020/tutorial3_distributions/)
