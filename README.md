@@ -7,7 +7,7 @@
 ## [Project 1. Exploratory Visualization](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/tree/master/exploratory_project)
 ## [Project 2. Narrative Visualization](https://github.com/nchikurova/Interactive-Data-Vis-Portfolio/tree/master/project_2)
 
-#[Restaurants in NYC by Google rating and number of reviews](https://nchikurova.github.io/Interactive-Data-Vis-Sp2020/tutorial3_distributions/)
-#[US Heat Extremes Map by State](https://nchikurova.github.io/Interactive-Data-Vis-Sp2020/tutorial5_geographic/)
+# [Restaurants in NYC by Google rating and number of reviews](https://nchikurova.github.io/Interactive-Data-Vis-Sp2020/tutorial3_distributions/)
+# [US Heat Extremes Map by State](https://nchikurova.github.io/Interactive-Data-Vis-Sp2020/tutorial5_geographic/)
 
 
