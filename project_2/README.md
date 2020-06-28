@@ -47,7 +47,7 @@ Adding cartoon images was the initial idea in order to make this article more pl
 
 ## 5. Improvement and goals for future
 
-## To make this project perfect I would:
+## To make this project better I would:
 
 - change design of a header. Somehow I think it looks empty. I tried to add boarders and different types of lines, and background images, but nothing was good enough.
 - replace the dropdown menu in Firts Births chart with checkboxes (so user can not only see them separately but compare few of them by the same time, for example 1979 and 2010)
