@@ -57,7 +57,7 @@ The thought of "how much I don't know and what I can't do yet" I am trying to tu
 
 I have spent hours on both projects and considering that I did not know any single line of Javascript and d3, or HTML I think it is pretty impressive. However, I do think it could be better. It is either because of the lack of skills, time, or energy, this project is not perfect. 
 
-## To make this project perfect I would:
+## To make this project better I would:
 
 - make all elements interactive and connected to the dropdown menu
 - replace the dropdown menu with either radio buttons or checkboxes (since it is only three countries and it is possible to show the viewer all options at once)
