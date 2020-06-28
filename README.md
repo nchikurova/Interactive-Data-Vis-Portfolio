@@ -10,5 +10,6 @@ This portfolio was made for Interactive Data Analysis class in CUNY Graduate Cen
 
 ### [Restaurants in NYC by Google rating and number of reviews](https://nchikurova.github.io/Interactive-Data-Vis-Sp2020/tutorial3_distributions/)
 ### [US Heat Extremes Map by State](https://nchikurova.github.io/Interactive-Data-Vis-Sp2020/tutorial5_geographic/)
+### [Average Sales Price for Condos in Manhattan 2003-2012](https://nchikurova.github.io/Interactive-Data-Vis-Sp2020/tutorial4_timeseries/)
 
 
