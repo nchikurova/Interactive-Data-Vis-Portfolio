@@ -8,7 +8,7 @@ To view screenshot of a project click [here](https://github.com/nchikurova/Inter
 
 ## 1. Prospectus
 
-Born and raised in Russia, I notice that some traditions have been changing over time. And, after another question from my mom: "Where are my grandchildren?", I decided to take a look at the Russian fertility data over time. Analyzing fertility tables and the age of women at birth from 1970 to 2020, I found out that the average age of women in Russian at their first birth had increased. I am not the one in my late 20s, who does not have kids yet. The average age of women at first birth in Russia started increasing after the 2000s despite the traditions.
+Born and raised in Russia, I notice that some traditions have been changing over time. And, after another question from my mom: "Where are my grandchildren?", I decided to take a look at the Russian fertility data over time. Analyzing fertility tables and the age of women at birth from 1970 to 2020, I found out that the average age of women in Russia at their first birth had increased. I am not the one in my late 20s, who does not have kids yet. The average age of women at first birth in Russia started increasing after the 2000s despite the traditions.
 
 ## 2. Sketches and Mockups
 
