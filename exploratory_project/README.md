@@ -1,4 +1,5 @@
-# Project 1. Exploratory Visualization: The Western African Ebola virus epidemic
+## Project 1. Exploratory Visualization
+# The Western African Ebola virus epidemic
 
 To explore the project click [here](https://nchikurova.github.io/Interactive-Data-Vis-Portfolio/exploratory_project/).
 
