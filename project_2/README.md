@@ -1,4 +1,6 @@
-# Project 2. Narrative Visualization
+## Project 2. Narrative Visualization
+
+# "Where are my grandchildren?", or the average age of women in Russia at their first birth for the past century.
 
 To explore the project click [here](https://nchikurova.github.io/Interactive-Data-Vis-Portfolio/project_2/narrative_project/).
 
